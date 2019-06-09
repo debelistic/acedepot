@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-<section class="overlape">
+<section class="overlape top-sec-margin">
     <div class="block no-padding">
         <div data-velocity="-.1" style="background: url(images/slider2.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
         <div class="container fluid">

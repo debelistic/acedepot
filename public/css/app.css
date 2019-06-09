@@ -4412,6 +4412,7 @@ input[type=button].btn-block {
 }
 
 .navbar-toggler {
+  align-self: center;
   padding: 0.25rem 0.75rem;
   font-size: 1.125rem;
   line-height: 1;
@@ -10723,7 +10724,7 @@ a.text-dark:focus {
 }
 
 .banner-slider {
-  height: 100vh;
+  height: calc(100vh - 126px);
 }
 
 .documents div {

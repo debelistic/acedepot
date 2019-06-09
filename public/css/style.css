@@ -619,8 +619,8 @@ label::after {
 .menu-sec {
     float: left;
     width: 100%;
-    margin: 30px 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 10px;
 }
 .logo {
     float: left;
@@ -11166,7 +11166,7 @@ footer.ft .scrollup {
     position: absolute;
     left: 0;
     top: 0;
-    background: #f0ad4e7a;
+    background: #24324a;
 }
 .forsticky.sticky .menu-sec nav > ul > li > a {
     color: #232323;
@@ -11176,8 +11176,8 @@ footer.ft .scrollup {
     color: #222222;
 }
 .forsticky.sticky .menu-sec {
-    margin-top: 23px;
-    margin-bottom: 17px;
+    margin: 0;
+    padding: 8px;
 }
 .forsticky.sticky .post-job-btn:hover {
     background: #fb236a;
@@ -11187,7 +11187,7 @@ footer.ft .scrollup {
     position: fixed;
     left: 0;
     top: 0;
-    background: #ffffff;
+    background: #fda502;
      -webkit-box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
     -ms-box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
@@ -11786,4 +11786,8 @@ header.style4 .account-btns > li a,
 #scroll-here {
 	margin-top:100px;
 }
+}
+
+.top-sec-margin {
+    margin-top: 126px;
 }

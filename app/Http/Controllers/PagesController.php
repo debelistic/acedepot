@@ -34,11 +34,6 @@ class PagesController extends Controller
     {
         return view('pages.faq');
     }
-
-    public function loginSignup()
-    {
-        return view('pages.login');
-    }
     
     public function termsAndConditions()
     {

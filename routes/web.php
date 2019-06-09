@@ -23,22 +23,12 @@ Route::get('/available-contracts', 'PagesController@availableContracts');
 
 Route::get('/faq', 'PagesController@faq');
 
-
-Route::get('/login', 'PagesController@loginSignup');
-
-Route::post('/login', 'PagesController@loginSignup');
-
-Route::get('/register', 'RegisterController@test');
-
 Route::get('/terms-of-service', 'PagesController@termsAndConditions');
 
 Route::get('/user-agreement', 'PagesController@userAgreement');
 
 Route::get('/privacy-policy', 'PagesController@privacyPolicy');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -38,7 +38,7 @@
                                                 @csrf
 
                                                 <div class="form-group row form_input">
-                                                    <input id="first_name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                                    <input id="first_name" type="text" class="form-control @error('name') is-invalid @enderror" name="first_name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                                     <label for="first_name" class="col-md-4 col-form-label text-md-right label_name">
                                                         <span class="content_name">{{ __('First Name') }}</span>
                                                     </label>
@@ -50,11 +50,11 @@
                                                 </div>
 
                                                 <div class="form-group row form_input">
-                                                    <input id="last_name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                                    <input id="last_name" type="text" class="form-control @error('name') is-invalid @enderror" name="last_name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                                     <label for="last_name" class="col-md-4 col-form-label text-md-right label_name">
                                                         <span class="content_name">{{ __('Last Name') }}</span>
                                                     </label>
-                                                    @error('name')
+                                                    @error('last_name')
                                                             <span class="invalid-feedback" role="alert">
                                                                     <strong>{{ $message }}</strong>
                                                             </span>
@@ -99,10 +99,11 @@
 
                                 </div>
                         </div>
-                        
-                    
-    
-                    
+									@error('user_register')
+										<span class="invalid-feedback" role="alert">
+														<h2>{{ $message }}</h2>
+										</span>
+									@enderror
                 </div>
         </div>
     </section>

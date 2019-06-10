@@ -11,9 +11,12 @@ label::before, label::after {
 
 .auth_form_area{
   height: calc(100vh - 120px);
-  margin-top: 126px;
   display: grid;
   grid-template-columns: 2fr 1fr;
+}
+
+.show_element{
+  display: block;
 }
 
 .auth_main{
@@ -34,6 +37,11 @@ label::before, label::after {
   justify-content: left;
 }
 
+.overlay_center{
+  justify-content: center;
+  align-content: center;
+}
+
 .auth_main h1{
   font-family: "Open Sans";
   color: #fda502;
@@ -44,6 +52,16 @@ label::before, label::after {
   text-transform: uppercase;
   width: 40%;
   height: 90%;
+}
+
+.auth_main h2{
+  font-family: "Open Sans";
+  color: #fda502;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-shadow: 3px 4px 2px black;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .auth_form{
@@ -153,6 +171,46 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+.role_desc{
+  display: block;
+}
+
+.user_roles{
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(160px, 1fr) minmax(160px, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  height: 400px;
+  font-family: "Open Sans";
+}
+
+
+
+.candidate,
+.contractor,
+.employer{
+  background: #24324ac0;
+  border-radius: 15px;
+}
+
+.role_title{
+  padding: 10px;
+  background: #fda502;
+  text-align: center;
+  font-weight: 700;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.role_detail{
+  color: #fda502;
+  padding: 10px;
+  text-align: justify;
+  font-weight: bold;
+}
+
 
 @media (max-width:1200px){
   .auth_form_area{

@@ -7,9 +7,28 @@
 	
     
 <section class="auth_form_area">
-	<main class="auth_main">
-		<div class="main_overlay">
-			<h1>In prevailing adverse economy, we position you for growth in life, career and business</h1>
+	<main class="auth_main show_element">
+		<div class="main_overlay overlay_center">
+			<div class="role_desc">
+				<h2>Choose Your Role</h2>
+				<div class="user_roles">
+					<div class="candidate">
+						<h3 class="role_title">Candidate</h3>
+						<i class="role_icon"></i>
+						<p class="role_detail">Build a quality career profile on AceDepot and be visible to millions of employers daily</p>
+					</div>
+					<div class="contractor">
+							<h3 class="role_title">Contractor</h3>
+							<i class="role_icon"></i>
+							<p class="role_detail">Increase your business and company visibility, apply for and win contracts on AceDepot</p>
+					</div>
+					<div class="employer">
+							<h3 class="role_title">Employer</h3>
+							<i class="role_icon"></i>
+							<p class="role_detail">Search, request and hire your ideal candidates and contractors on AceDepot </p>
+					</div>
+				</div>
+			</div>			
 		</div>
 	</main>
 	<aside class="auth_form">

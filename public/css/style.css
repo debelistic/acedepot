@@ -610,17 +610,15 @@ label::after {
 
 /* Header */
 .stick-top {
-    position: absolute;
-    left: 0;
-    top: 0;
     width: 100%;
-    z-index: 12;
 }
 .menu-sec {
     float: left;
     width: 100%;
     margin: 0;
     padding: 10px;
+    padding: 0;
+    height: 120px;
 }
 .logo {
     float: left;
@@ -11163,9 +11161,11 @@ footer.ft .scrollup {
     z-index: 6;
 }
 .forsticky {
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: sticky;
+    background: #24324a;
+}
+header{
+    height: 120px;
     background: #24324a;
 }
 .forsticky.sticky .menu-sec nav > ul > li > a {

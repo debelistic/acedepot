@@ -126,6 +126,18 @@ a.auth_options{
   font-weight: 700;
 }
 
+select.soflow-color {
+  color: black;
+  background-color: #fff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: 2px solid #fda502;
+  padding-left: 15px;
+  margin: 1.2rem;
+  height: 3rem;
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 

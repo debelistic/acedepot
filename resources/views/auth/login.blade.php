@@ -55,11 +55,11 @@
 	
 				<input type="submit" class="btn btn-primary" value="{{ __('Login') }}">
 				<div class="">
-				<a href="{{route('register')}}" >don't have an account <span class="signup">signup</span></a>
+				<a class="auth_options" href="{{route('register')}}" >don't have an account <span class="signup">signup</span></a>
 				</div>
 	
 				@if (Route::has('password.request'))
-				<a class="" href="{{ route('password.request') }}">
+				<a class="auth_options" href="{{ route('password.request') }}">
 					{{ __('Forgot Your Password?') }}
 				</a>
 				@endif

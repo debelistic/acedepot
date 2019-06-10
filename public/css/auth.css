@@ -1,0 +1,137 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+label::before, label::after {
+  display: none !important;
+}
+
+.auth_form_area{
+  height: calc(100vh - 120px);
+  margin-top: 126px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.auth_main{
+  background: url(../images/slider/newslider3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.main_overlay{
+  width: 100%;
+  height: 100%;
+  background: #b186379f;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.auth_main h1{
+  font-family: "Open Sans";
+  color: #fda502;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 80px;
+  text-shadow: 3px 4px 2px black;
+  text-transform: uppercase;
+  width: 40%;
+  height: 90%;
+}
+
+.auth_form{
+  padding: 1.4rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth_header{
+  margin: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: "Open Sans";
+}
+
+.auth_input{
+  margin: 1.2rem;
+  height: 5rem;
+}
+
+label{
+  padding: 0;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"]{
+  border-bottom: 4px solid #fda502;
+  background-color: #fff !important;
+  padding: 0.7rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  cursor: text;
+  margin: 0;
+  outline: none;
+}
+
+input[type="checkbox"]{
+  border: 4px solid #fda502;
+  margin: 10px;
+  font-size: 3em;
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
+
+.checkbox_label{
+  display: inline;
+}
+
+input[type="submit"]{
+  background-color: #fda502;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  border: 3px solid #24324a;
+}
+
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus{
+  color: #fda502;
+  background-color: #24324a;
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 3px solid #fda502;
+  -webkit-text-fill-color: #141312;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

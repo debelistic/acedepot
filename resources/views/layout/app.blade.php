@@ -27,10 +27,10 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/chosen.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/colors/colors.css')}}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="{{asset('css/login_signup_form.css')}}" />
-
-    
-    <!--Extra link-->
+	<!--Dynamic StyleSheets added from a view would be pasted here-->
+	@yield('styles')
+			
+			<!--Extra link-->
     
 	<script language="javascript">
 		document.onmousedown=disableclick;

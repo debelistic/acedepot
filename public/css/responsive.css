@@ -166,7 +166,7 @@ header {
 }
 .block .container, .container {
     max-width: 100%;
-    padding: 0 15px;
+    padding: 15px;
 }
 .container.fluid {
     padding: 0;
@@ -184,7 +184,7 @@ header {
 .border-right {
     border: none;
     padding: 0;
-        padding-top: 0px;
+    padding-top: 0px;
     padding-top: 40px;
 }
 .coverletter-sec {

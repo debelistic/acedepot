@@ -143,10 +143,14 @@ html.no-scoll {
     overflow: hidden;
 }
 header {
-    z-index: 3;
+    z-index: 2;
     position: relative;
 }
 
+main.maincontent{
+    float: none;
+    position: relative;
+}
 
 /* Theme Layout */
 .theme-layout{
@@ -172,10 +176,15 @@ header {
 }
 .block {
     float: left;
-    padding: 60px 0;
+    padding: 0;
     position: relative;
     width: 100%;
     z-index: 1;
+}
+
+footer .block{
+    background: #24324a;
+    padding: 0;
 }
 section{
     float:left;
@@ -1873,10 +1882,14 @@ label::after {
     color: #ffffff;
     margin: 0;
 }
-footer {
-    float: left;
+
+footer{
     width: 100%;
     background: #24324a;
+}
+.foot_wid_wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .widget {
     float: left;
@@ -2113,7 +2126,7 @@ footer {
     float: left;
     width: 100%;
     text-align: center;
-    background: #1d293e;
+    background: #24324a;
     padding: 24px 0;
 }
 .bottom-line span {
@@ -11120,8 +11133,8 @@ header.style5 .post-job-btn:hover {
 }
 .bottom-line .scrollup {
     position: absolute;
-    right: 70px;
-    bottom: 44px;
+    right: 5px;
+    bottom: 3px;
     width: 50px;
     height: 50px;
     border: 2px solid #8a99b3;

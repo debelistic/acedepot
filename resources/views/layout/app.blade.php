@@ -56,15 +56,9 @@
 
 		@yield('content')
 
-
 		@include('inc.footer')
-
+		
 	</div>
-
-
-	@include('inc.popups')
-
-	@include('inc.profilesidebar')
 
 	@include('inc.scripts')
 

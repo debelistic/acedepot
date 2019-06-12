@@ -176,7 +176,7 @@ main.maincontent{
 }
 .block {
     float: left;
-    padding: 0;
+    padding: 40px 0;
     position: relative;
     width: 100%;
     z-index: 1;
@@ -184,7 +184,6 @@ main.maincontent{
 
 footer .block{
     background: #24324a;
-    padding: 0;
 }
 section{
     float:left;
@@ -496,7 +495,7 @@ label::after {
 }
 label::before {
   content: " ";
-  border: 2px solid #e6e7ef;
+  border: 2px solid #e6e477ef;
   
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -754,6 +753,7 @@ label::after {
 .menu-sec nav > ul > li:hover > ul {
     opacity: 1;
     visibility: visible;
+    z-index: 5;
 }
 .menu-sec nav > ul > li > ul li {
     float: left;
@@ -4443,7 +4443,7 @@ footer.style3 span, footer.style3 a {
 
 }
 section.overlape {
-    z-index: 2;
+    z-index: 1;
 }
 .emlthis {
     float: left;
@@ -11178,7 +11178,7 @@ footer.ft .scrollup {
     background: #24324a;
 }
 header{
-    height: 120px;
+    min-height: 120px;
     background: #24324a;
 }
 .forsticky.sticky .menu-sec nav > ul > li > a {

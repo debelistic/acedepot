@@ -35,7 +35,7 @@
 		<h2 class="auth_header">{{ __('Register') }}</h2>
 
 		<div class="">
-			<select name="role" form="user_register" class="soflow-color">
+			<select name="role" form="user_register" class="soflow-color auth_input">
 				<option>Select Your Role</option>
 				<option value="candiate">Candiate</option>
 				<option value="contractor">Contractor</option>

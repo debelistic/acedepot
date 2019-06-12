@@ -8,8 +8,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <nav class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
+    <nav class="collapse navbar-collapse mobile_navs" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto navbar_nav_ul">
                 <li class="">
                     <a class="" href="/" class=" ">Home</a>
                 </li>

@@ -147,9 +147,28 @@ header {
 }
 
 @media (max-width:980px){
+header{
+    min-height: 150px;
+}
+select.soflow-color {
+    color: black;
+    background-color: #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 2px solid #fda502;
+    padding-left: 15px;
+    margin: 1.2rem;
+    height: 3rem;
+}
+.logo{
+    float: none;
+    margin-top: 25px;
+    height: 70px;
+}
 .menu-sec{
     width: 100%;
-    margin: 30px 0;
+    margin: 10px;
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
@@ -490,21 +509,38 @@ select, options {
 
 
 @media (max-width:767px){
+.carousel-caption p {
+    color: #fda502;
+    padding: 0 60px;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 40px;
+}
+.menu-sec nav > ul {
+    float: none; 
+    margin: 20px 0;
+}
 .menu-sec{
     float: left;
     width: 100%;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
+    display: block;
+}
+.mobile_navs{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #24324a;
+    transition: 0.4s ease 0s;
+    z-index: 22;
 }
 .top-sec-margin {
     margin-top: 155px;
 }
 .banner-slider {
-    height: calc(100vh - 155px);
+    height: calc(100vh - 120px);
 }
 .error-sec > p {
     display: none;
@@ -1320,7 +1356,5 @@ select, options {
     padding-left: 20px;
     padding-right: 20px;
 }
-
-
 
 }

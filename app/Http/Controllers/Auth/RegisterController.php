@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -31,12 +32,13 @@ class RegisterController extends Controller
      */
     protected function redirectTo()
     {
-        if (auth()->user()->role === 'candidate') {
-            return '/candidate_dashboard';
-        }else if (auth()->user()->role === 'employer') {
-            return '/employer_dashboard';
-        }else if (auth()->user()->role === 'contractor') {
-            return '/contractor_dashboard';
+        $role = Auth::user()->role;
+        if ($role === 'candidate') {
+            return 'candidate_dashboard';
+        }else if ($role === 'employer') {
+            return 'employer_dashboard';
+        }else if ($role === 'contractor') {
+            return 'contractor_dashboard';
         }
     }
 
@@ -58,13 +60,17 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'role' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        try {
+            return Validator::make($data, [
+                'first_name' => ['required', 'string', 'max:255'],
+                'last_name' => ['required', 'string', 'max:255'],
+                'role' => ['required', 'string', 'max:50'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ]);
+        } catch (Illuminate\Database\QueryException  $th) {
+            return back()->withError($th->getMessage())->withInput();
+        }
     }
 
     /**
@@ -75,14 +81,17 @@ class RegisterController extends Controller
      */
     protected function create(Request $data)
     {
-        //die($data);
-        return User::create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'role' => $data['role'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        try {
+            return User::create([
+                'first_name' => $data['first_name'],
+                'last_name' => $data['last_name'],
+                'role' => $data['role'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+        } catch (Illuminate\Database\QueryException $th) {
+            return back()->withError($th->getMessage())->withInput();
+        }
     }
 
     public function test()

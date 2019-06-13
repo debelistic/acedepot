@@ -9,16 +9,16 @@
 	<meta name="author" content="Victor Awotidebe">
     
   <!--Imported code for Bootstrap-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> --}}
 	<!--End of Imported code for Bootstrap-->
     
 	<!-- Styles -->
 	<!--Extra link-->
-	<link rel="stylesheet" type="text/css" href="{{asset('css/css/vendor.bundle.css')}}" />
+	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/css/vendor.bundle.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/css/style.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
-			
-	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-grid.css')}}" />
+			 --}}
+	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-grid.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/icons.css')}}">
 	<link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
@@ -26,7 +26,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/chosen.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/colors/colors.css')}}" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /> --}}
 	<!--Dynamic StyleSheets added from a view would be pasted here-->
 	@yield('styles')
 			

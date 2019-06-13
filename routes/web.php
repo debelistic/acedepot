@@ -32,3 +32,5 @@ Route::get('/privacy-policy', 'PagesController@privacyPolicy');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/candidate-dashboard', 'CandidatesController@index')->name('candidate.index');

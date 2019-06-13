@@ -7,6 +7,9 @@
 	
     
 <section class="auth_form_area">
+		@if (session('error'))
+			<div class="alert alert-danger">{{ session('error') }}</div>
+		@endif
 	<main class="auth_main show_element">
 		<div class="main_overlay overlay_center">
 			<div class="role_desc">
@@ -37,7 +40,7 @@
 		<div class="">
 			<select name="role" form="user_register" class="soflow-color auth_input">
 				<option>Select Your Role</option>
-				<option value="candiate">Candiate</option>
+				<option value="candidate">Candidate</option>
 				<option value="contractor">Contractor</option>
 				<option value="employer">Employer</option>
 			</select>

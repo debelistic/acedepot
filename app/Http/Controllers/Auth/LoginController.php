@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+//use AuthenticatesUsers;
+use Lang;
 
 class LoginController extends Controller
 {
@@ -25,16 +29,17 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected function redirectTo()
-    {
-        if (auth()->user()->role === 'candidate') {
-            return '/candidate_dashboard';
-        }else if (auth()->user()->role === 'employer') {
-            return '/employer_dashboard';
-        }else if (auth()->user()->role === 'contractor') {
-            return '/contractor_dashboard';
-        }
-    }
+    // public function redirectTo()
+    // {
+    //     $role = Auth::user()->role;
+    //     if ($role === 'candidate') {
+    //         return 'candidate-dashboard';
+    //     }else if ($role === 'employer') {
+    //         return 'employer-dashboard';
+    //     }else if ($role === 'contractor') {
+    //         return 'contractor-dashboard';
+    //     }
+    // }
 
     /**
      * Create a new controller instance.
@@ -45,4 +50,29 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * Redirect if failed
+     */
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return redirect()->to('/login')
+            ->withInput($request->only($this->username(), 'remember'))
+            ->withErrors([
+                $this->username() => Lang::get('auth.failed'),
+            ]);
+    }
+
+    /**
+     * Redirect to dashboard if success
+     */
+    protected function authenticated(Request $request, $user) {
+        if ($user->role == 'candidate') {
+            return redirect('/candidate-dashboard');
+        } else if ($user->role == 'employer') {
+            return redirect('/employer-dashboard');
+        } else if ($user->role == 'contractor') {
+            return redirect('/contractor-dashboard');
+        }
+   }
 }

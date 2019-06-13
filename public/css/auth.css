@@ -5,12 +5,26 @@
   -moz-box-sizing: border-box;
 }
 
+html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer{
+  margin-top: auto;
+}
+
 label::before, label::after {
   display: none !important;
 }
 
 .auth_form_area{
-  height: calc(100vh - 120px);
+  height: auto;
   display: grid;
   grid-template-columns: 2fr 1fr;
 }

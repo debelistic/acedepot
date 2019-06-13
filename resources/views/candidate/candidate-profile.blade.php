@@ -19,7 +19,7 @@
 <div class="row bottom-mrg">
   <div class="col-md-12 col-sm-12">
     <div class="advanceDaniel-detail detail-desc-caption">
-      <h4>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h4><span class="designation">Web Designer</span>
+      <h4>Daniel Smith</h4><span class="designation">Web Designer</span>
       <ul>
         <li><strong class="j-view">85</strong>New Post</li>
         <li><strong class="j-applied">110</strong>Job Applied</li>

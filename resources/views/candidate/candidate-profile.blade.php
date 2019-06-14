@@ -1,10 +1,8 @@
 @extends('layout.app')
 
-@section('styles')
-  <link rel="stylesheet" href="assets/plugins/css/plugins.css">      
-  <link href="assets/css/styles.css" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" id="jssDefault" href="assets/css/colors/green-style.css">
-@endsection()
+{{-- @section('styles')
+  
+@endsection() --}}
 
 @section('content')
 <section class="detail-desc advance-detail-pr gray-bg">

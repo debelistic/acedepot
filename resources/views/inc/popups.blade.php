@@ -1,32 +1,53 @@
-<div class="account-popup-area signin-popup-box">
-	<div class="account-popup">
-		<span class="close-popup"><i class="la la-close"></i></span>
-		<!--<h3>Candidates / Contractors</h3>-->
-		<span>In what capacity are you looking for work?</span>
-		<form method="post" action=" ./">
-			<p class="remember-label" style="text-align:left">
-				<input type="radio" required name="work" value="1" id="work1"><label for="work1">As a Candidate</label>
-                <br>
-                <input type="radio" name="work" value="2" id="work2"><label for="work2">As a Business Contractor</label>
-			</p>
-			<button name="work-proceed" type="submit">Proceed</button>
-		</form>
-	</div>
-</div><!-- LOGIN POPUP -->
+<!-- Sign Up Window Code -->
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="tab" role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign In</a></li>
+					<li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content" id="myModalLabel2">
+					<div role="tabpanel" class="tab-pane fade in active" id="login">
+						<img src="assets/img/logo.png" class="img-responsive" alt="" />
+						<div class="subscribe wow fadeInUp">
+							<form class="form-inline" method="post">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+										<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+										<div class="center">
+										<button type="submit" id="login-btn" class="submit-btn"> Login </button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 
-<div class="account-popup-area signup-popup-box">
-	<div class="account-popup">
-		<span class="close-popup"><i class="la la-close"></i></span>
-		<!--<h3>Candidates / Contractors</h3>-->
-		<span>What type of employees are you looking for?</span>
-		<form method="post" action=" ./">
-			<p class="remember-label" style="text-align:left">
-				<input type="radio" required name="hire" value="1" id="hire1"><label for="hire1">Individual Candidates</label>
-                <br>
-                <input type="radio" name="hire" id="hire2" value="2"><label for="hire2">Business Contractors</label>
-			</p>
-			<button name="hire-proceed" type="submit">Proceed</button>
-		</form>
+					<div role="tabpanel" class="tab-pane fade" id="register">
+					<img src="assets/img/logo.png" class="img-responsive" alt="" />
+						<form class="form-inline" method="post">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<input type="text"  name="email" class="form-control" placeholder="Your Name" required="">
+										<input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+										<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+										<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+										<div class="center">
+										<button type="submit" id="subscribe" class="submit-btn"> Create Account </button>
+										</div>
+									</div>
+								</div>
+							</form>
+					</div>
+				</div>
+				</div>
+			</div>
+			</div>
 	</div>
-</div>
-<!-- SIGNUP POPUP -->
+</div>   
+	<!-- End Sign Up Window -->

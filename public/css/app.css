@@ -620,10 +620,10 @@ pre code {
 }
 
 .row {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
-  margin-left: -15px;
+  margin-left: -15px; */
 }
 
 .no-gutters {
@@ -3247,18 +3247,18 @@ input[type=button].btn-block {
 }
 
 .dropdown-toggle {
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .dropdown-toggle::after {
-  display: inline-block;
+  /* display: inline-block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
   content: "";
   border-top: 0.3em solid;
   border-right: 0.3em solid transparent;
   border-bottom: 0;
-  border-left: 0.3em solid transparent;
+  border-left: 0.3em solid transparent; */
 }
 
 .dropdown-toggle:empty::after {
@@ -4259,11 +4259,11 @@ input[type=button].btn-block {
 }
 
 .nav {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
-  list-style: none;
+  list-style: none; */
 }
 
 .nav-link {
@@ -4350,30 +4350,30 @@ input[type=button].btn-block {
 }
 
 .navbar {
-  position: relative;
+  /* position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem; */
 }
 
 .navbar > .container,
 .navbar > .container-fluid {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .navbar-brand {
-  display: inline-block;
+  /* display: inline-block;
   padding-top: 0.32rem;
   padding-bottom: 0.32rem;
   margin-right: 1rem;
   font-size: 1.125rem;
   line-height: inherit;
-  white-space: nowrap;
+  white-space: nowrap; */
 }
 
 .navbar-brand:hover,
@@ -4382,11 +4382,11 @@ input[type=button].btn-block {
 }
 
 .navbar-nav {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
-  list-style: none;
+  list-style: none; */
 }
 
 .navbar-nav .nav-link {
@@ -4395,8 +4395,8 @@ input[type=button].btn-block {
 }
 
 .navbar-nav .dropdown-menu {
-  position: static;
-  float: none;
+  /* position: static;
+  float: none; */
 }
 
 .navbar-text {
@@ -4406,9 +4406,9 @@ input[type=button].btn-block {
 }
 
 .navbar-collapse {
-  flex-basis: 100%;
+  /* flex-basis: 100%;
   flex-grow: 1;
-  align-items: center;
+  align-items: center; */
 }
 
 .navbar-toggler {
@@ -4643,7 +4643,7 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(0, 0, 0, 0.9);
+  /* color: rgba(0, 0, 0, 0.9); */
 }
 
 .navbar-light .navbar-brand:hover,

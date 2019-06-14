@@ -265,9 +265,9 @@ ul {
     padding: 0;
 }
 ul li{
-    color:#1e1e1e;
+    /* color:#1e1e1e;
     margin-bottom: 15px;
-    position: relative;
+    position: relative; */
 }
 iframe{
     width:100%;
@@ -629,11 +629,11 @@ label::after {
     height: 120px;
 }
 .logo {
-    float: left;
+    /* float: left;
     margin: 3px 0;
     position: relative;
     width: 250px;
-    height: 100px;
+    height: 100px; */
 }
 .logo > a img{
     width: 100%;
@@ -1884,8 +1884,8 @@ label::after {
 }
 
 footer{
-    width: 100%;
-    background: #24324a;
+    /* width: 100%;
+    background: #24324a; */
 }
 .foot_wid_wrapper{
     display: grid;

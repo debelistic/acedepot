@@ -14,11 +14,13 @@
     
 	<!-- Styles -->
 	<!--Extra link-->
-	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/css/vendor.bundle.css')}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset('css/css/style.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('bootstrap/css/bootstrap.css')}}" />
+
+	<link rel="stylesheet" type="text/css" href="{{asset('css/css/vendor.bundle.css')}}" />
+	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/css/style.css')}}" /> --}}
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
-			 --}}
-	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-grid.css')}}" />
+			
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-grid.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/icons.css')}}">
 	<link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
@@ -26,7 +28,11 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/chosen.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/colors/colors.css')}}" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /> --}}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+	<link rel="stylesheet" href="assets/plugins/css/plugins.css">      
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" id="jssDefault" href="assets/css/colors/green-style.css">
 	<!--Dynamic StyleSheets added from a view would be pasted here-->
 	@yield('styles')
 			
@@ -47,20 +53,20 @@
 </head>
 <body>
 
-	<div class="page-loading">
-		<img src="images/loader.gif" alt="" />
-	</div>
+	<div class="Loader"></div>
 
-	<div class="theme-layout" id="scrollup">
+	<div class="wrapper">
 		@include('inc.nav')
 
 		@yield('content')
 
 		@include('inc.footer')
-		
+
+		@include('inc.popups')
+
+		@include('inc.scripts')
+
+		@yield('scripts')
 	</div>
-
-	@include('inc.scripts')
-
 </body>
 </html>

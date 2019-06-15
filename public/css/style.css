@@ -186,9 +186,9 @@ footer .block{
     background: #24324a;
 }
 section{
-    float:left;
+    /* float:left;
     position:relative;
-    width:100%;
+    width:100%; */
 }
 .double-gap-top {
     padding-top: 120px;
@@ -479,7 +479,7 @@ input[type="radio"] {
 label {
   position: relative;
   display: inline-block;
-  padding: 0 0 0 2em;
+  /* padding: 0 0 0 2em; */
   height: 1.5em;
   line-height: 1.5;
   cursor: pointer;
@@ -494,7 +494,7 @@ label::after {
   height: 20px !important;
 }
 label::before {
-  content: " ";
+  /* content: " "; */
   border: 2px solid #e6e477ef;
   
   -webkit-border-radius: 3px;

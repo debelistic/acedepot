@@ -3219,7 +3219,7 @@ input[type=button].btn-block {
 }
 
 .fade:not(.show) {
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .collapse:not(.show) {
@@ -4342,7 +4342,7 @@ input[type=button].btn-block {
 }
 
 .tab-content > .tab-pane {
-  display: none;
+  /* display: none; */
 }
 
 .tab-content > .active {

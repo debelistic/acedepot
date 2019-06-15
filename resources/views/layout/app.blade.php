@@ -57,11 +57,11 @@
 
 	<div class="wrapper">
 		@include('inc.nav')
-
+		<div class="clearfix"></div>
 		@yield('content')
-
+		<div class="clearfix"></div>
 		@include('inc.footer')
-
+		<div class="clearfix"></div>
 		@include('inc.popups')
 
 		@include('inc.scripts')

@@ -5,6 +5,12 @@
 @endsection() --}}
 
 @section('content')
+<!-- Title Header Start -->
+<section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+  <div class="container">
+
+  </div>
+</section>
 <section class="detail-desc advance-detail-pr gray-bg">
   <div class="container">
 <div class="ur-detail-wrap create-kit padd-bot-0">
@@ -16,7 +22,7 @@
 
 <div class="row bottom-mrg">
   <div class="col-md-12 col-sm-12">
-    <div class="advanceDaniel-detail detail-desc-caption">
+    <div class="advance-detail detail-desc-caption">
       <h4>Daniel Smith</h4><span class="designation">Web Designer</span>
       <ul>
         <li><strong class="j-view">85</strong>New Post</li>
@@ -603,7 +609,7 @@
       <div id="settings" class="tab-pane fade">
         <div class="row no-mrg">
           <h3>Edit Profile</h3>
-          <div class="edit-pro">
+          <form class="edit-pro">
             <div class="col-md-4 col-sm-6">
               <label>First Name</label>
               <input type="text" class="form-control" placeholder="Matthew">
@@ -670,26 +676,26 @@
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Upload Profile Pic</label>
-              <form action="https://codeminifier.com/upload-target" class="dropzone dz-clickable profile-pic">
+              <div class="dropzone dz-clickable profile-pic">
                 <div class="dz-default dz-message">
                   <i class="fa fa-cloud-upload"></i>
                   <span>Drop files here to upload</span>
                 </div>
-              </form>
+              </div>
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Upload Profile Cover</label>
-              <form action="https://codeminifier.com/upload-target" class="dropzone dz-clickable profile-cover">
+              <div class="dropzone dz-clickable profile-cover">
                 <div class="dz-default dz-message">
                   <i class="fa fa-cloud-upload"></i>
                   <span>Drop files here to upload</span>
                 </div>
-              </form>
+              </div>
             </div>
             <div class="col-sm-12">
               <button type="button" class="update-btn">Update Now</button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
       <!-- End Settings -->

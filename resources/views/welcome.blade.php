@@ -73,6 +73,7 @@
 					<span class="sr-only">Next</span>
 				</a>
 	</div>
+	<div class="clearfix"></div>
 
 	<section id="scroll-here">
 			<div class="block">

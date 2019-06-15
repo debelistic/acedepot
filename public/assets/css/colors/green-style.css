@@ -329,7 +329,7 @@ button.update-btn {
 }
 span.info-bar {
     border: 1px solid #fda502;
-    background:rgba(7,177,7,0.15);
+    background:#f5a10593;
     color:#fda502;
 }
 /*--------Responsive color Style-----------*/
@@ -339,7 +339,7 @@ body nav.navbar.bootsnav ul.nav > li > a.signin {
 background:#fda502 !important;
 }
 li.left-br {
-border-left: 1px solid rgba(7, 177, 7,0.4);
+border-left: 1px solid #f5a10593;
 }
 }
 

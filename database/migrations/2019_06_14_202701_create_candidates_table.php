@@ -21,6 +21,7 @@ class CreateCandidatesTable extends Migration
             $table->string('phone')->unique();
             $table->string('age');
             $table->enum('gender', ['male', 'female']);
+            $table->string('religion');
             $table->string('address_1', 500);
             $table->string('address_2', 500);
             $table->enum('highest_qualification', ['no formal education', 'secondary school', 'technical school', 'nce', 'nd1', 'nd2', 'bsc', 'pg degree']);

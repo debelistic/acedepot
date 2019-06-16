@@ -1,4 +1,7 @@
 @extends('layout.app')
+@section('styles')
+  <link rel="stylesheet" href="build/css/intlTelInput.css">
+@endsection
 
 @section('content')
   <section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
@@ -6,70 +9,83 @@
       <h2>Candidate Form</h2>
     </div>
   </section>
+  
   <section>
-    <div id="settings" class="tab-pane fade">
+    <div id="settings" class="tab-pane">
       <div class="row no-mrg">
         <h3>Edit Profile</h3>
         <form class="edit-pro">
           <div class="col-md-4 col-sm-6">
             <label>First Name</label>
-            <input type="text" class="form-control" placeholder="Matthew">
+            <input type="text" class="form-control" value={{Auth::user()->first_name}}>
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Middle Name</label>
-            <input type="text" class="form-control" placeholder="Else">
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Last Name</label>
-            <input type="text" class="form-control" placeholder="Dana">
+            <input type="text" class="form-control" value={{Auth::user()->last_name}}>
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="dana.mathew@gmail.com">
+            <input type="email" class="form-control" value={{Auth::user()->email}}>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <label>Job Title</label>
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Phone</label>
-            <input type="text" class="form-control" placeholder="+91 258 475 6859">
+            <input type="tel" class="form-control" id="phone">
           </div>
           <div class="col-md-4 col-sm-6">
-            <label>Zip / Postal</label>
-            <input type="text" class="form-control" placeholder="258 457 528">
+            <label>Age</label>
+            <input type="date" class="form-control" >
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <label>Gender</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <label>Highest Educational Qualification</label>
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Address</label>
-            <input type="text" class="form-control" placeholder="204 Lowes Alley">
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Address 2</label>
-            <input type="text" class="form-control" placeholder="Software Developer">
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <label>Organization</label>
-            <input type="text" class="form-control" placeholder="Software Developer">
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>City</label>
-            <input type="text" class="form-control" placeholder="Chandigarh">
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <label>Loal Government/Province</label>
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>State</label>
-            <input type="text" class="form-control" placeholder="Punjab">
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Country</label>
-            <input type="text" class="form-control" placeholder="India">
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
-            <label>Old Password</label>
-            <input type="password" class="form-control" placeholder="*********">
+            <label>Availiabilty</label>
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
-            <label>New Password</label>
-            <input type="password" class="form-control" placeholder="*********">
+            <label>Skills</label>
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
-            <label>Old Password</label>
-            <input type="password" class="form-control" placeholder="*********">
+            <label>Religion</label>
+            <input type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>About you</label>
@@ -100,4 +116,12 @@
       </div>
     </div>
   </section>
+@endsection
+@section('scripts')
+  <script src="build/js/intlTelInput.min.js"></script>
+  <script>
+    let input = document.querySelector("#phone");
+
+    window.intlTelInput(input,({ }))
+  </script>
 @endsection

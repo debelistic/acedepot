@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Candidate;
 use Illuminate\Http\Request;
 
-class CandidateController extends Controller
+class EmployersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +40,10 @@ class CandidateController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Candidate  $candidate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Candidate $candidate)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class CandidateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Candidate  $candidate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Candidate $candidate)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class CandidateController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Candidate  $candidate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Candidate $candidate)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class CandidateController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Candidate  $candidate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Candidate $candidate)
+    public function destroy($id)
     {
         //
     }

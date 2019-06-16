@@ -2,11 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Candiadate;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Auth;
 
+
 class CandidatesController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,13 +32,39 @@ class CandidatesController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new candidate.
      *
-     * @return \Illuminate\Http\Response
+     * @return \App\Candidate;
      */
-    public function create()
+    public function create($data)
     {
         //
+        try {
+            User::create([
+                'middle_name' => $data['middle_name'],
+                'what_i_do' => $data['what_i_do'],
+                'email' => $data['email'],
+                'phone' => $data['phone'],
+                'age' => $data['age'],
+                'gender' => $data['gender'],
+                'address_1' => $data['address_1'],
+                'address_2' => $data['address_2'],
+                'highest_qualification' => $data['highest_qualification'],
+                'lga' => $data['lga'],
+                'state' => $data['state'],
+                'country' => $data['country'],
+                'status' => $data['status'],
+                'num_of_applications' => $data['num_of_applications'],
+                'num_of_jobs_done' => $data['num_of_jobs_done'],
+                'skills' => $data['skills'],
+                'about' => $data['about'],
+                'img_url' => $data['img_url'],
+                'cv_url' => $data['cv_url'],
+            ]);
+            return redirect()->action('${App\Http\Controllers\CandidatesController@index}', ['parameterKey' => 'value']);
+        } catch (Illuminate\Database\QueryException $th) {
+            return back()->withError($th->getMessage())->withInput();
+        }
     }
 
     /**
@@ -45,9 +84,9 @@ class CandidatesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('candidate.candidate-register')->with('user', auth()->user());
     }
 
     /**

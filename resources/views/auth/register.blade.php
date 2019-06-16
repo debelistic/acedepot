@@ -8,7 +8,7 @@
     
 <section class="auth_form_area">
 		@if (session('error'))
-			<div class="alert alert-danger">{{ session('error') }}</div>
+			<div class="error-logger alert alert-danger">{{ session('error') }}</div>
 		@endif
 	<main class="auth_main show_element">
 		<div class="main_overlay overlay_center">

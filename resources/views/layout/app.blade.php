@@ -58,6 +58,11 @@
 	<div class="wrapper">
 		@include('inc.nav')
 		<div class="clearfix"></div>
+		{{-- <section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+			<div class="container">
+				@yield('title')
+			</div>
+		</section> --}}
 		@yield('content')
 		<div class="clearfix"></div>
 		@include('inc.footer')

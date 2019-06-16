@@ -29,17 +29,17 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // public function redirectTo()
-    // {
-    //     $role = Auth::user()->role;
-    //     if ($role === 'candidate') {
-    //         return 'candidate-dashboard';
-    //     }else if ($role === 'employer') {
-    //         return 'employer-dashboard';
-    //     }else if ($role === 'contractor') {
-    //         return 'contractor-dashboard';
-    //     }
-    // }
+    public function redirectTo()
+    {
+        $role = Auth::user()->role;
+        if ($role === 'candidate') {
+            return 'candidate-register';
+        }else if ($role === 'employer') {
+            return 'employer-dashboard';
+        }else if ($role === 'contractor') {
+            return 'contractor-dashboard';
+        }
+    }
 
     /**
      * Create a new controller instance.
@@ -68,7 +68,7 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user) {
         if ($user->role == 'candidate') {
-            return redirect('/candidate-dashboard');
+            return redirect('/candidate-register');
         } else if ($user->role == 'employer') {
             return redirect('/employer-dashboard');
         } else if ($user->role == 'contractor') {

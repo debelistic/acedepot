@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
 use Illuminate\Http\Request;
-use Auth;
 
 class RegisterController extends Controller
 {
@@ -30,16 +30,19 @@ class RegisterController extends Controller
      *
      * @var string
      */
+    //public $redirectTo = '/home';
     protected function redirectTo()
     {
-        $role = Auth::user()->role;
-        if ($role === 'candidate') {
-            return 'candidate_dashboard';
-        }else if ($role === 'employer') {
-            return 'employer_dashboard';
-        }else if ($role === 'contractor') {
-            return 'contractor_dashboard';
-        }
+        $role = auth()->user()->role;
+        dd($role);
+        // if ($role === 'candidate') {
+        //     return '/candidate-register';
+        // }else if ($role === 'employer') {
+        //     return '/employer_dashboard';
+        // }else if ($role === 'contractor') {
+        //     return '/contractor_dashboard';
+        // }
+        // return '/register';
     }
 
     /**
@@ -58,7 +61,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    public function validator(array $data)
     {
         try {
             return Validator::make($data, [
@@ -81,21 +84,46 @@ class RegisterController extends Controller
      */
     protected function create(Request $data)
     {
+        //$this->validator($data, []);
         try {
-            return User::create([
+            User::create([
                 'first_name' => $data['first_name'],
                 'last_name' => $data['last_name'],
                 'role' => $data['role'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]);
-        } catch (Illuminate\Database\QueryException $th) {
-            return back()->withError($th->getMessage())->withInput();
+            //return $this->redirectTo();
+            $role = $data['role'];
+            if ($role == 'candidate') {
+                return redirect( '/candidate-register');
+            }
+            //else if ($role == 'employer') {
+            //     return redirect('/employer_dashboard');
+            // }else if ($role == 'contractor') {
+            //     return redirect('/contractor_dashboard');
+            // }else{
+            //     return redirect('some/url');
+            // }
+            //return '/register';
+            //return redirect('login');
+            return redirect('/about');
+        } catch (\Illuminate\Database\QueryException $th) {
+            //dd($th->getMessage());
+            return redirect('/register')->withError($th->getMessage())->withInput();
         }
     }
 
-    public function test()
-    {
-        return 'You are here';
-    }
+    /**
+     * Redirect to dashboard if success
+     */
+    protected function authenticated(Request $request, $user) {
+        if ($user->role == 'candidate') {
+            return redirect('/candidate-register');
+        } else if ($user->role == 'employer') {
+            return redirect('/employer-dashboard');
+        } else if ($user->role == 'contractor') {
+            return redirect('/contractor-dashboard');
+        }
+   }
 }

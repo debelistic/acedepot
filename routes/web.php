@@ -33,4 +33,16 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+//candidates
 Route::get('/candidate-dashboard', 'CandidatesController@index')->name('candidate.index');
+
+Route::get('/candidate-register', 'CandidatesController@show')->name('candidate.show');
+
+Route::post('/candidate-register', 'CandidatesController@create')->name('candidate.create');
+
+//Route::update('/candidate-update', 'CandidatesController@update')->name('candidate.update');
+
+
+
+//end of candidates route

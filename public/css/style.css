@@ -9279,7 +9279,8 @@ header.gradient{
     margin-top: 70px;
 }
 input[type="file"] {
-    display: none;
+    /* display: none; */
+    background: #e4e4e4;
 }
 .custom-file-upload {
 }

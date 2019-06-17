@@ -24,14 +24,15 @@ class CreateCandidatesTable extends Migration
             $table->string('religion');
             $table->string('address_1', 500);
             $table->string('address_2', 500);
-            $table->enum('highest_qualification', ['no formal education', 'secondary school', 'technical school', 'nce', 'nd1', 'nd2', 'bsc', 'pg degree']);
+            $table->enum('highest_qualification', ['No formal education','Primary school', 'Secondary school', 'Technical school', 'NCE', 'ND I', 'ND II', 'First Degree', 'PG Degree']);
+            $table->string('city');
             $table->string('lga');
             $table->string('state', 100);
             $table->string('country');
             $table->enum('status', ['hired', 'hunting', 'vacation'])->default('hunting');
             $table->integer('num_of_applications')->default(0);
             $table->integer('num_of_jobs_done')->default(0);
-            $table->json('skills');
+            $table->string('skills');
             $table->longText('about');
             $table->string('img_url');
             $table->string('cv_url');

@@ -39,7 +39,7 @@ Route::get('/candidate-dashboard', 'CandidatesController@index')->name('candidat
 
 Route::get('/candidate-register', 'CandidatesController@show')->name('candidate.show');
 
-Route::post('/candidate-register', 'CandidatesController@create')->name('candidate.create');
+Route::post('/candidate-register', 'CandidatesController@create')->name('candidateCreate');
 
 //Route::update('/candidate-update', 'CandidatesController@update')->name('candidate.update');
 

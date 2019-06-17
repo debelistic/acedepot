@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Candiadate;
+use App\Candidate;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -40,15 +40,17 @@ class CandidatesController extends Controller
     {
         //
         try {
-            User::create([
+            Candidate::create([
                 'middle_name' => $data['middle_name'],
                 'what_i_do' => $data['what_i_do'],
                 'email' => $data['email'],
                 'phone' => $data['phone'],
                 'age' => $data['age'],
                 'gender' => $data['gender'],
+                'religion' => $data['religion'],
                 'address_1' => $data['address_1'],
                 'address_2' => $data['address_2'],
+                'city' => $data['city'],
                 'highest_qualification' => $data['highest_qualification'],
                 'lga' => $data['lga'],
                 'state' => $data['state'],
@@ -61,7 +63,7 @@ class CandidatesController extends Controller
                 'img_url' => $data['img_url'],
                 'cv_url' => $data['cv_url'],
             ]);
-            return redirect()->action('${App\Http\Controllers\CandidatesController@index}', ['parameterKey' => 'value']);
+            return redirect('/candidate-dashboard');
         } catch (Illuminate\Database\QueryException $th) {
             return back()->withError($th->getMessage())->withInput();
         }

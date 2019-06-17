@@ -17,7 +17,7 @@
     <div id="settings" class="tab-pane">
       <div class="row no-mrg">
         <h3>Edit Profile</h3>
-        <form class="edit-pro">
+        <form class="edit-pro" method="POST" action="{{ route('candidateCreate') }}">
           <div class="col-md-4 col-sm-6">
             <label>First Name</label>
             <input name="first_name" type="text" class="form-control" value={{Auth::user()->first_name}}>
@@ -212,7 +212,7 @@
             <option value='Zamfara'>Zamafara</option>
           </select> --}}
           <div class="col-sm-12">
-            <button type="button" class="update-btn">Update Now</button>
+            <button type="submit" class="update-btn">Update Now</button>
           </div>
         </form>
       </div>
@@ -229,7 +229,5 @@
 
     window.intlTelInput(input,({ }));
     $('#skills').tagsInput();
-    $('#country').flagStrap();
-
   </script>
 @endsection

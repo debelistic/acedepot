@@ -73,19 +73,19 @@ const Yobe = ['Select item...', 'Bade', 'Bursari', 'Damaturu', 'Fika', 'Fune', '
 const Zamfara = ['Select item...', 'Anka', 'Bakura', 'Birnin Magaji Kiyaw', 'Bukkuyum', 'Bungudu', 'Gummi', 'Gusau', 'Kaura Namoda', 'Maradun', 'Maru', 'Shinkafi', 'Talata Mafara', 'Chafe', 'Zurmi'];
 
 
-let state = document.querySelector('#states');
+let state = document.querySelector('#state');
 let lgas = document.querySelector('#lgas');
 
 //select state
 //populate lga options with selected state lga
 //
 
-document.addEventListener('selectionchange', (e) => {
+if(state){
+  console.log(state);
+}
+
+state.addEventListener('change', (e) => {
   console.log(e.target.value)
-  if(e.target.id == 'state'){
-    console.log('catch');
-    
-  }
 })
 
 

@@ -31,13 +31,14 @@ Route::get('/privacy-policy', 'PagesController@privacyPolicy');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PagesController@index')->name('home');
 
 
 //candidates
-Route::get('/candidate-dashboard', 'CandidatesController@index')->name('candidate.index');
 
-Route::get('/candidate-register', 'CandidatesController@show')->name('candidate.show');
+Route::get('/candidate-dashboard', 'CandidatesController@index')->name('candidate');
+
+Route::get('/candidate-register', 'CandidatesController@show')->name('candidateForm');
 
 Route::post('/candidate-register', 'CandidatesController@create')->name('candidateCreate');
 

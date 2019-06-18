@@ -68,7 +68,7 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user) {
         if ($user->role == 'candidate') {
-            return redirect('/candidate-register');
+            return redirect('/candidate-dashboard');
         } else if ($user->role == 'employer') {
             return redirect('/employer-dashboard');
         } else if ($user->role == 'contractor') {

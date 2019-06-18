@@ -7,6 +7,9 @@
 @endsection
 
 @section('content')
+  @if (session('error'))
+    <div class="error-logger alert alert-danger">{{ session('error') }}</div>
+  @endif
   <section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
     <div class="container">
       <h2>Candidate Form</h2>
@@ -18,6 +21,7 @@
       <div class="row no-mrg">
         <h3>Edit Profile</h3>
         <form class="edit-pro" method="POST" action="{{ route('candidateCreate') }}">
+          {{ csrf_field() }}
           <div class="col-md-4 col-sm-6">
             <label>First Name</label>
             <input name="first_name" type="text" class="form-control" value={{Auth::user()->first_name}}>

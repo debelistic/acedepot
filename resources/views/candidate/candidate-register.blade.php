@@ -56,7 +56,6 @@
             <input name="gender" type="radio" value="male" class="form-control">Male<br>
             <input name="gender" type="radio" value="female" class="form-control">Female<br>
             <input name="gender" type="radio" value="others" class="form-control">Others<br>
-            <input name="gender" type="radio" value="not specify" class="form-control">Not Specify<br>
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Highest Educational Qualification</label>

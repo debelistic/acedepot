@@ -21,8 +21,9 @@ class CandidatesController extends Controller
      */
     public function index()
     {
-        //
-        return view('candidate.candidate-profile')->with('user', auth()->user());
+        return view('candidate.candidate-register')->with('user', auth()->user());
+
+        //return view('candidate.candidate-profile')->with('user', auth()->user());
     }
 
     /**
@@ -46,7 +47,7 @@ class CandidatesController extends Controller
             Candidate::create([
                 'middle_name' => $data['middle_name'],
                 'what_i_do' => $data['what_i_do'],
-                'email' => $data['email'],
+                'candidate_id' => auth()->id,
                 'phone' => $data['phone'],
                 'age' => $data['age'],
                 'gender' => $data['gender'],
@@ -65,6 +66,10 @@ class CandidatesController extends Controller
                 'about' => $data['about'],
                 'img_url' => $data['img_url'],
                 'cv_url' => $data['cv_url'],
+                'fb_url' => $data['fb_url'],
+                'twt_url' => $data['twt_url'],
+                'lnkd_url' => $data['lnkd_url'],
+                'ext_web_url' => $data['ext_web_url'],
             ]);
             return redirect('/candidate-dashboard');
         } catch (Illuminate\Database\QueryException $th) {
@@ -93,7 +98,11 @@ class CandidatesController extends Controller
      */
     public function show()
     {
-        return view('candidate.candidate-register')->with('user', auth()->user());
+        $id = auth()->user()->id;
+        $candidate = Candidate::find($id);
+        //return view('candidate.candidate-register')->with('user', auth()->user());
+        return view('candidate.candidate-profile', compact('candidate'));
+
     }
 
     /**

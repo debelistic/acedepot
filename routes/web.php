@@ -36,11 +36,11 @@ Route::get('/home', 'PagesController@index')->name('home');
 
 //candidates
 
-Route::get('/candidate-dashboard', 'CandidatesController@index')->name('candidate');
+Route::get('/candidate-register', 'CandidatesController@index')->name('candidateRegForm');
 
-Route::get('/candidate-register', 'CandidatesController@show')->name('candidateForm');
+Route::get('/candidate-dashboard', 'CandidatesController@show')->name('candidateDashboard');
 
-Route::post('/candidate-register', 'CandidatesController@create')->name('candidateCreate');
+Route::post('/candidate-register', 'CandidatesController@create')->name('createCandidate');
 
 //Route::update('/candidate-update', 'CandidatesController@update')->name('candidate.update');
 

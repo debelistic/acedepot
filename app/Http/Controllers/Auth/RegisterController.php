@@ -25,11 +25,11 @@ class RegisterController extends Controller
         $role = auth()->user()->role;
 
         if ($role === 'candidate') {
-            return redirect('candidate-register');
+            return redirect()->candidateRegForm();
         }else if ($role === 'employer') {
-            return redirect('employer-register');
+            return redirect()->employerRegForm();
         }else if ($role === 'contractor') {
-            return redirect('contractor-register');
+            return redirect()->contractorRegForm();;
         }
        }
         return redirect('register');;

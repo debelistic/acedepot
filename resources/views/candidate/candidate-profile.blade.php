@@ -17,17 +17,16 @@
 
 <div class="row">
   <div class="detail-pic"><img src="assets/img/can-1.png" class="img" alt="" /><a href="#" class="detail-edit" title="edit"><i class="fa fa-pencil"></i></a></div>
-  <div class="detail-status"><span>Active Now</span></div>
+<div class="detail-status"><span>{{$candidate->status}}</span></div>
 </div>
 
 <div class="row bottom-mrg">
   <div class="col-md-12 col-sm-12">
     <div class="advance-detail detail-desc-caption">
-      <h4>Daniel Smith</h4><span class="designation">Web Designer</span>
+      <h4>{{$candidate->user->first_name}} {{$candidate->user->last_name}}</h4><span class="designation">Web Designer</span>
       <ul>
-        <li><strong class="j-view">85</strong>New Post</li>
-        <li><strong class="j-applied">110</strong>Job Applied</li>
-        <li><strong class="j-shared">120</strong>Invitation</li>
+        <li><strong class="j-applied">{{$candidate->num_of_applications}}</strong>Job Applied</li>
+        <li><strong class="j-shared">{{$candidate->num_of_jobs_done}}</strong>Invitation</li>
       </ul>
     </div>
   </div>
@@ -37,11 +36,10 @@
   <div class="detail pannel-footer">
     <div class="col-md-5 col-sm-5">
       <ul class="detail-footer-social">
-        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="{{$candidate->fb_url}}"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="{{$candidate->twt_url}}"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="{{$candidate->lnkd_url}}"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="{{$candidate->ext_url}}"><i class="fa fa-web"></i></a></li>
       </ul>
     </div>
     <div class="col-md-7 col-sm-7">
@@ -62,18 +60,14 @@
       <li class="active"><a href="#about">About</a></li>
       <li><a href="#address">Address</a></li>
       <li><a href="#matches-job">Matches Job</a></li>
-      <li><a href="#friends">Friends</a></li>
-      <li><a href="#messages">Messages <span class="info-bar">6</span></a></li>
-      <li><a href="#settings">Settings</a></li>
+      <li><a href="#settings">Update Job Profile</a></li>
     </ul>
     
     <!-- Start All Sec -->
     <div class="tab-content">
       <div id="about" class="tab-pane fade in active">
-        <h3>About Adam Declizer</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum sed diam ac fermentum. Mauris nec pellentesque neque. Cras nec diam euismod, congue sapien eu, fermentum libero. Vestibulum quis sem.</p>
+        <h3>About {{$candidate->user->first_name}} {{$candidate->user->last_name}}</h3>
+        <p>{{$candidate->about}}</p>
       </div>
       <!-- End About Sec -->
       
@@ -81,14 +75,13 @@
       <div id="address" class="tab-pane fade">
         <h3>Address Info</h3>
         <ul class="job-detail-des">
-          <li><span>Address:</span>SCO 210, Neez Plaza</li>
-          <li><span>City:</span>Mohali</li>
-          <li><span>State:</span>Punjab</li>
-          <li><span>Country:</span>India</li>
-          <li><span>Zip:</span>520 548</li>
-          <li><span>Telephone:</span>+91 123 456 7854</li>
-          <li><span>Fax:</span>(622) 123 456</li>
-          <li><span>Email:</span><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a1d8ced4d3c4ccc0c8cde1c6ccc0c8cd8fc2cecc">[email&#160;protected]</a></li>
+          <li><span>Address:</span>{{$candidate->address_1}}</li>
+          <li><span>Address 2:</span>{{$candidate->address_1}}</li>
+          <li><span>City:</span>{{$candidate->city}}</li>
+          <li><span>State:</span>{{$candidate->state}}</li>
+          <li><span>Country:</span>{{$candidate->country}}</li>
+          <li><span>Telephone:</span>{{$candidate->phone}}</li>
+          <li><span>Email:</span>{{$candidate->user->email}}</li>
         </ul>
       </div>
       <!-- End Address Sec -->
@@ -287,323 +280,6 @@
       </div>
       <!-- End Job List -->
       
-      <!-- Start Friend List -->
-      <div id="friends" class="tab-pane fade">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <div class="manage-cndt">
-              <div class="cndt-status pending">Pending</div>
-              <div class="cndt-caption">
-                <div class="cndt-pic"><img src="assets/img/can-1.png" class="img-responsive" alt=""></div>
-                <h4>Charles Hopman</h4><span>Web designer</span>
-                <p>Our analysis team at Megriosft use end to end innovation proces</p>
-              </div><a href="#" title="" class="cndt-profile-btn">View Profile</a></div>
-          </div>
-          
-          <div class="col-md-4 col-sm-4">
-            <div class="manage-cndt">
-              <div class="cndt-status available">Available</div>
-              <div class="cndt-caption">
-                <div class="cndt-pic"><img src="assets/img/can-2.png" class="img-responsive" alt=""></div>
-                <h4>Ethan Marion</h4><span>IOS designer</span>
-                <p>Our analysis team at Megriosft use end to end innovation proces</p>
-              </div><a href="#" title="" class="cndt-profile-btn">View Profile</a></div>
-          </div>
-          
-          <div class="col-md-4 col-sm-4">
-            <div class="manage-cndt">
-              <div class="cndt-status pending">Pending</div>
-              <div class="cndt-caption">
-                <div class="cndt-pic"><img src="assets/img/can-3.png" class="img-responsive" alt=""></div>
-                <h4>Zara Clow</h4><span>UI/UX designer</span>
-                <p>Our analysis team at Megriosft use end to end innovation proces</p>
-              </div><a href="#" title="" class="cndt-profile-btn">View Profile</a></div>
-          </div>
-          
-          <div class="col-md-4 col-sm-4">
-            <div class="manage-cndt">
-              <div class="cndt-status pending">Pending</div>
-              <div class="cndt-caption">
-                <div class="cndt-pic"><img src="assets/img/can-4.png" class="img-responsive" alt=""></div>
-                <h4>Henry Crooks</h4><span>PHP Developer</span>
-                <p>Our analysis team at Megriosft use end to end innovation proces</p>
-              </div><a href="#" title="" class="cndt-profile-btn">View Profile</a></div>
-          </div>
-          
-          <div class="col-md-4 col-sm-4">
-            <div class="manage-cndt">
-              <div class="cndt-status available">Available</div>
-              <div class="cndt-caption">
-                <div class="cndt-pic"><img src="assets/img/can-2.png" class="img-responsive" alt=""></div>
-                <h4>Joseph Macfarlan</h4><span>App Developer</span>
-                <p>Our analysis team at Megriosft use end to end innovation proces</p>
-              </div><a href="#" title="" class="cndt-profile-btn">View Profile</a></div>
-          </div>
-          
-          <div class="col-md-4 col-sm-4">
-            <div class="manage-cndt">
-              <div class="cndt-status pending">Pending</div>
-              <div class="cndt-caption">
-                <div class="cndt-pic"><img src="assets/img/can-1.png" class="img-responsive" alt=""></div>
-                <h4>Zane Joyner</h4><span>Html Expert</span>
-                <p>Our analysis team at Megriosft use end to end innovation proces</p>
-              </div><a href="#" title="" class="cndt-profile-btn">View Profile</a></div>
-          </div>
-          
-          <div class="col-md-4 col-sm-4">
-            <div class="manage-cndt">
-              <div class="cndt-status pending">Pending</div>
-              <div class="cndt-caption">
-                <div class="cndt-pic"><img src="assets/img/can-3.png" class="img-responsive" alt=""></div>
-                <h4>Anna Hoysted</h4><span>UI/UX Designer</span>
-                <p>Our analysis team at Megriosft use end to end innovation proces</p>
-              </div><a href="#" title="" class="cndt-profile-btn">View Profile</a></div>
-          </div>
-          
-          <div class="col-md-4 col-sm-4">
-            <div class="manage-cndt">
-              <div class="cndt-status available">Available</div>
-              <div class="cndt-caption">
-                <div class="cndt-pic"><img src="assets/img/can-4.png" class="img-responsive" alt=""></div>
-                <h4>Spencer Birdseye</h4><span>SEO Expert</span>
-                <p>Our analysis team at Megriosft use end to end innovation proces</p>
-              </div><a href="#" title="" class="cndt-profile-btn">View Profile</a></div>
-          </div>
-          
-          <div class="col-md-4 col-sm-4">
-            <div class="manage-cndt">
-              <div class="cndt-status pending">Pending</div>
-              <div class="cndt-caption">
-                <div class="cndt-pic"><img src="assets/img/can-1.png" class="img-responsive" alt=""></div>
-                <h4>Eden Macaulay</h4><span>Web designer</span>
-                <p>Our analysis team at Megriosft use end to end innovation proces</p>
-              </div><a href="#" title="" class="cndt-profile-btn">View Profile</a></div>
-          </div>
-        </div>
-        <div class="row">
-          <ul class="pagination">
-            <li><a href="#">«</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#"><i class="fa fa-ellipsis-h"></i></a></li>
-            <li><a href="#">»</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End Friend List -->
-      
-      <!-- Start Message -->
-      <div id="messages" class="tab-pane fade">
-        <div class="inbox-body inbox-widget">
-          <div class="mail-card">
-            <header class="card-header cursor-pointer collapsed" data-toggle="collapse" data-target="#full-message" aria-expanded="false">
-              <div class="card-title flexbox">
-                <img class="img-responsive img-circle avatar" src="assets/img/can-1.png" alt="...">
-                <div>
-                <h6>Daniel Duke</h6>
-                <small>Today at 07:34 AM</small>
-                <small><a class="text-info collapsed" href="#detail-view" data-toggle="collapse" aria-expanded="false">View Detail</a></small>
-
-                <div class="no-collapsing cursor-text collapse" id="detail-view" aria-expanded="false" style="height: 0px;">
-                  <small class="d-inline-block">From:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="deaab6bbbfbab3b7b09eaab6bbaab6bbb3bbf0b7b1">[email&#160;protected]</a></small>
-                  <br>
-                  <small class="d-inline-block">To:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d7e786f7e6e7f646f687f4d746c656262236e6260">[email&#160;protected]</a></small>
-                </div>
-                </div>
-              </div>
-            </header>
-            <div class="collapse" id="full-message" aria-expanded="false" style="height: 0px;">
-              <div class="card-body">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mail-card unread">
-            <header class="card-header cursor-pointer collapsed" data-toggle="collapse" data-target="#meaages-2" aria-expanded="false">
-              <div class="card-title flexbox">
-                <img class="img-responsive img-circle avatar" src="assets/img/can-2.png" alt="...">
-                <div>
-                <h6>Daniel Duke</h6>
-                <small>Today at 07:34 AM</small>
-                <small><a class="text-info collapsed" href="#detail-view1" data-toggle="collapse" aria-expanded="false">View Detail</a></small>
-
-                <div class="no-collapsing cursor-text collapse" id="detail-view1" aria-expanded="false" style="height: 0px;">
-                  <small class="d-inline-block">From:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="37435f5256535a5e5977435f52435f525a52195e58">[email&#160;protected]</a></small>
-                  <br>
-                  <small class="d-inline-block">To:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dba8aeb9a8b8a9b2b9bea99ba2bab3b4b4f5b8b4b6">[email&#160;protected]</a></small>
-                </div>
-                </div>
-              </div>
-            </header>
-            <div class="collapse" id="meaages-2" aria-expanded="false" style="height: 0px;">
-              <div class="card-body">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mail-card">
-            <header class="card-header cursor-pointer collapsed" data-toggle="collapse" data-target="#meaages-3" aria-expanded="false">
-              <div class="card-title flexbox">
-                <img class="img-responsive img-circle avatar" src="assets/img/can-1.png" alt="...">
-                <div>
-                <h6>Daniel Duke</h6>
-                <small>Today at 07:34 AM</small>
-                <small><a class="text-info collapsed" href="#detail-view2" data-toggle="collapse" aria-expanded="false">View Detail</a></small>
-
-                <div class="no-collapsing cursor-text collapse" id="detail-view2" aria-expanded="false" style="height: 0px;">
-                  <small class="d-inline-block">From:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aedac6cbcfcac3c7c0eedac6cbdac6cbc3cb80c7c1">[email&#160;protected]</a></small>
-                  <br>
-                  <small class="d-inline-block">To:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="255650475646574c474057655c444d4a4a0b464a48">[email&#160;protected]</a></small>
-                </div>
-                </div>
-              </div>
-            </header>
-            <div class="collapse" id="meaages-3" aria-expanded="false" style="height: 0px;">
-              <div class="card-body">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mail-card">
-            <header class="card-header cursor-pointer collapsed" data-toggle="collapse" data-target="#meaages-4" aria-expanded="false">
-              <div class="card-title flexbox">
-                <img class="img-responsive img-circle avatar" src="assets/img/can-3.png" alt="...">
-                <div>
-                <h6>Daniel Duke</h6>
-                <small>Today at 07:34 AM</small>
-                <small><a class="text-info collapsed" href="#detail-view3" data-toggle="collapse" aria-expanded="false">View Detail</a></small>
-
-                <div class="no-collapsing cursor-text collapse" id="detail-view3" aria-expanded="false" style="height: 0px;">
-                  <small class="d-inline-block">From:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbbfa3aeaaafa6a2a58bbfa3aebfa3aea6aee5a2a4">[email&#160;protected]</a></small>
-                  <br>
-                  <small class="d-inline-block">To:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a595f4859495843484f586a534b42454504494547">[email&#160;protected]</a></small>
-                </div>
-                </div>
-              </div>
-            </header>
-            <div class="collapse" id="meaages-4" aria-expanded="false" style="height: 0px;">
-              <div class="card-body">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mail-card unread">
-            <header class="card-header cursor-pointer collapsed" data-toggle="collapse" data-target="meaages-5" aria-expanded="false">
-              <div class="card-title flexbox">
-                <img class="img-responsive img-circle avatar" src="assets/img/can-4.png" alt="...">
-                <div>
-                <h6>Daniel Duke</h6>
-                <small>Today at 07:34 AM</small>
-                <small><a class="text-info collapsed" href="#detail-view4" data-toggle="collapse" aria-expanded="false">View Detail</a></small>
-
-                <div class="no-collapsing cursor-text collapse" id="detail-view4" aria-expanded="false" style="height: 0px;">
-                  <small class="d-inline-block">From:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a1d5c9c4c0c5ccc8cfe1d5c9c4d5c9c4ccc48fc8ce">[email&#160;protected]</a></small>
-                  <br>
-                  <small class="d-inline-block">To:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87f4f2e5f4e4f5eee5e2f5c7fee6efe8e8a9e4e8ea">[email&#160;protected]</a></small>
-                </div>
-                </div>
-              </div>
-            </header>
-            <div class="collapse" id="meaages-5" aria-expanded="false" style="height: 0px;">
-              <div class="card-body">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mail-card">
-            <header class="card-header cursor-pointer">
-              <div class="card-title flexbox">
-                <img class="img-responsive img-circle avatar" src="assets/img/can-4.png" alt="...">
-                <div>
-                <h6>Daniel Duke</h6>
-                <small>Today at 07:34 AM</small>
-                <small><a class="text-info collapsed" href="#detail-view-6" data-toggle="collapse" aria-expanded="false">View Detail</a></small>
-
-                <div class="no-collapsing cursor-text collapse" id="detail-view-6" aria-expanded="false" style="height: 0px;">
-                  <small class="d-inline-block">From:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f2b373a3e3b3236311f2b373a2b373a323a713630">[email&#160;protected]</a></small>
-                  <br>
-                  <small class="d-inline-block">To:</small>
-                  <small><a href="https://codeminifier.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ef9c9a8d9c8c9d868d8a9daf968e878080c18c8082">[email&#160;protected]</a></small>
-                </div>
-                </div>
-              </div>
-            </header>
-            <div class="" id="meaages-6">
-              <div class="card-body">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
-                <hr>
-                <h5 class="text-lighter">
-                <i class="fa fa-paperclip"></i>
-                <small>Attchments (3)</small>
-                </h5>
-                <div class="attachment-block">
-                  <div class="thumb">
-                    <img src="assets/img/gallery1.jpg" alt="img" class="img-responsive">
-                  </div>
-                  <div class="attachment-info">
-                    <h6>Profile Pic  <span>( 1.69 mb )</span></h6>
-                    <ul>
-                      <li><a href="javascript:void(0)">Download</a></li>
-                      <li><a href="javascript:void(0)">View</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="attachment-block">
-                  <div class="thumb">
-                    <img src="assets/img/gallery2.jpg" alt="img" class="img-responsive">
-                  </div>
-                  <div class="attachment-info">
-                    <h6>Profile Pic  <span>( 1.69 mb )</span></h6>
-                    <ul>
-                      <li><a href="javascript:void(0)">Download</a></li>
-                      <li><a href="javascript:void(0)">View</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="attachment-block">
-                  <div class="thumb">
-                    <img src="assets/img/gallery3.jpg" alt="img" class="img-responsive">
-                  </div>
-                  <div class="attachment-info">
-                    <h6>Profile Pic  <span>( 1.69 mb )</span></h6>
-                    <ul>
-                      <li><a href="javascript:void(0)">Download</a></li>
-                      <li><a href="javascript:void(0)">View</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      <!-- End Message -->
       
       <!-- Start Settings -->
       <div id="settings" class="tab-pane fade">

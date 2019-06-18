@@ -17,10 +17,10 @@ class CreateCandidatesTable extends Migration
             $table->bigIncrements('id');
             $table->string('middle_name');
             $table->string('what_i_do');
-            $table->string('email')->unique();
+            $table->string('candidate_id');
             $table->string('phone')->unique();
             $table->string('age');
-            $table->enum('gender', ['male', 'female']);
+            $table->enum('gender', ['male', 'female', 'others']);
             $table->string('religion');
             $table->string('address_1', 500);
             $table->string('address_2', 500);
@@ -36,6 +36,10 @@ class CreateCandidatesTable extends Migration
             $table->longText('about');
             $table->string('img_url')->nullable();
             $table->string('cv_url')->nullable();
+            $table->string('fb_url')->nullable();
+            $table->string('twt_url')->nullable();
+            $table->string('lnkd_url')->nullable();
+            $table->string('ext_url')->nullable();
             $table->timestamps();
         });
     }

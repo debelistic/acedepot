@@ -9,7 +9,7 @@ class Candidate extends Model
     protected $fillable = [
                 'middle_name',
                 'what_i_do',
-                'email',
+                'candidate_id',
                 'phone',
                 'age',
                 'gender',
@@ -28,5 +28,16 @@ class Candidate extends Model
                 'about',
                 'img_url',
                 'cv_url',
+                'fb_url',
+                'twt_url',
+                'lnkd_url',
+                'ext_web_url'
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+    
 }

@@ -50,7 +50,7 @@
 												</ul>
 											</div>
 										</div><!-- end col-3 -->
-									</div><!-- end row -->									
+									</div><!-- end row -->
 								</li>
 							</ul>
 						</li>
@@ -63,7 +63,7 @@
 							</li>
 							@if (Route::has('register'))
 									<li class="left-br">
-											<a href="javascript:void(0)"  data-toggle="modal" data-target="#signup" class="signin">Sign In Now</a>									</li>
+											<a href="{{ route('register') }}" class="signin">{{__('Sign Up Now')}}</a></li>
 							@endif
 						@else
 														

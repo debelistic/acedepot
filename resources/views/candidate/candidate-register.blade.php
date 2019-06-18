@@ -149,6 +149,22 @@
             <input name="religion" type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
+            <label>Facebook Url</label>
+            <input name="fb_url" type="text" class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <label>Twitter Url</label>
+            <input name="twt_url" type="text" class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <label>Linked Url</label>
+            <input name="lnkd_url" type="text" class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <label>Linked Url</label>
+            <input name="ext_web_url" type="text" class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6">
             <label>Upload Profile Pic</label>
             <div class="dz-default dz-message">
               <input accept="image/*" name="img_url" type="file" class="form-control">

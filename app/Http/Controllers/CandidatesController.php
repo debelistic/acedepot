@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Candidate;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 
@@ -35,19 +36,19 @@ class CandidatesController extends Controller
     {
         //
         try {
-            $image = $data['img_url'];
-            $cv = $data['cv_url'];
+            // $image = $data['img_url'];
+            // $cv = $data['cv_url'];
             
-            $imageName = time().'.'.$image->getClientOriginalExtension();
-            $cvName = time().'.'.$cv->getClientOriginalExtension();
+            // $imageName = time().'.'.$image->getClientOriginalExtension();
+            // $cvName = time().'.'.$cv->getClientOriginalExtension();
 
-            $image->move(public_path('images'), $imageName);
-            $cv->move(public_path('images'), $cvName);
+            // $image->move(public_path('images'), $imageName);
+            // $cv->move(public_path('images'), $cvName);
 
             Candidate::create([
                 'middle_name' => $data['middle_name'],
                 'what_i_do' => $data['what_i_do'],
-                'candidate_id' => auth()->id,
+                'candidate_id' => auth()->user()->id,
                 'phone' => $data['phone'],
                 'age' => $data['age'],
                 'gender' => $data['gender'],
@@ -69,7 +70,7 @@ class CandidatesController extends Controller
                 'fb_url' => $data['fb_url'],
                 'twt_url' => $data['twt_url'],
                 'lnkd_url' => $data['lnkd_url'],
-                'ext_web_url' => $data['ext_web_url'],
+                'ext_url' => $data['ext_web_url'],
             ]);
             return redirect('/candidate-dashboard');
         } catch (Illuminate\Database\QueryException $th) {
@@ -99,9 +100,12 @@ class CandidatesController extends Controller
     public function show()
     {
         $id = auth()->user()->id;
-        $candidate = Candidate::find($id);
+        $candidate = Candidate::where('candidate_id', $id)->get();
+        //return ($candidate);
+        //dd($id);
         //return view('candidate.candidate-register')->with('user', auth()->user());
-        return view('candidate.candidate-profile', compact('candidate'));
+        //return $candidate;
+       return view('candidate.candidate-profile', compact('candidate'));
 
     }
 

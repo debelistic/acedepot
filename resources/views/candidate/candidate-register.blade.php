@@ -20,7 +20,7 @@
     <div id="settings" class="tab-pane">
       <div class="row no-mrg">
         <h3>Edit Profile</h3>
-        <form class="edit-pro" method="POST" action="{{ route('candidateCreate') }}">
+        <form class="edit-pro" method="POST" action="{{ route('createCandidate') }}">
           {{ csrf_field() }}
           <div class="col-md-4 col-sm-6">
             <label>First Name</label>
@@ -52,10 +52,10 @@
             <input name="age" type="date" class="form-control" >
           </div>
           <div class="col-md-4 col-sm-6">
-            <label>Gender</label>
-            <input name="gender" type="radio" value="male" class="form-control">Male<br>
-            <input name="gender" type="radio" value="female" class="form-control">Female<br>
-            <input name="gender" type="radio" value="others" class="form-control">Others<br>
+            <label>Gender</label><br>
+            <input name="gender" type="radio" value="male" class="form-control"><span>Male</span>
+            <input name="gender" type="radio" value="female" class="form-control"><span>Female</span>
+            <input name="gender" type="radio" value="others" class="form-control"><span>Others</span>
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Highest Educational Qualification</label>

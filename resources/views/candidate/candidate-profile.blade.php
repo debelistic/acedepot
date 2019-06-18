@@ -17,16 +17,16 @@
 
 <div class="row">
   <div class="detail-pic"><img src="assets/img/can-1.png" class="img" alt="" /><a href="#" class="detail-edit" title="edit"><i class="fa fa-pencil"></i></a></div>
-<div class="detail-status"><span>{{$candidate->status}}</span></div>
+<div class="detail-status"><span>{{$candidate[0]->status}}</span></div>
 </div>
 
 <div class="row bottom-mrg">
   <div class="col-md-12 col-sm-12">
     <div class="advance-detail detail-desc-caption">
-      <h4>{{$candidate->user->first_name}} {{$candidate->user->last_name}}</h4><span class="designation">Web Designer</span>
+      <h4>{{auth()->user()->first_name}} {{auth()->user()->last_name}}</h4><span class="designation">{{$candidate[0]->what_i_do}}</span>
       <ul>
-        <li><strong class="j-applied">{{$candidate->num_of_applications}}</strong>Job Applied</li>
-        <li><strong class="j-shared">{{$candidate->num_of_jobs_done}}</strong>Invitation</li>
+        <li><strong class="j-applied">{{$candidate[0]->num_of_applications}}</strong>Job Applied</li>
+        <li><strong class="j-shared">{{$candidate[0]->num_of_jobs_done}}</strong>Invitation</li>
       </ul>
     </div>
   </div>
@@ -36,10 +36,10 @@
   <div class="detail pannel-footer">
     <div class="col-md-5 col-sm-5">
       <ul class="detail-footer-social">
-        <li><a href="{{$candidate->fb_url}}"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="{{$candidate->twt_url}}"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="{{$candidate->lnkd_url}}"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="{{$candidate->ext_url}}"><i class="fa fa-web"></i></a></li>
+        <li><a href="{{$candidate[0]->fb_url}}"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="{{$candidate[0]->twt_url}}"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="{{$candidate[0]->lnkd_url}}"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="{{$candidate[0]->ext_url}}"><i class="fa fa-web"></i></a></li>
       </ul>
     </div>
     <div class="col-md-7 col-sm-7">
@@ -66,8 +66,8 @@
     <!-- Start All Sec -->
     <div class="tab-content">
       <div id="about" class="tab-pane fade in active">
-        <h3>About {{$candidate->user->first_name}} {{$candidate->user->last_name}}</h3>
-        <p>{{$candidate->about}}</p>
+        <h3>About {{Auth::user()->first_name}} {{Auth::user()->last_name}}</h3>
+        <p>{{$candidate[0]->about}}</p>
       </div>
       <!-- End About Sec -->
       
@@ -75,13 +75,13 @@
       <div id="address" class="tab-pane fade">
         <h3>Address Info</h3>
         <ul class="job-detail-des">
-          <li><span>Address:</span>{{$candidate->address_1}}</li>
-          <li><span>Address 2:</span>{{$candidate->address_1}}</li>
-          <li><span>City:</span>{{$candidate->city}}</li>
-          <li><span>State:</span>{{$candidate->state}}</li>
-          <li><span>Country:</span>{{$candidate->country}}</li>
-          <li><span>Telephone:</span>{{$candidate->phone}}</li>
-          <li><span>Email:</span>{{$candidate->user->email}}</li>
+          <li><span>Address:</span>{{$candidate[0]->address_1}}</li>
+          <li><span>Address 2:</span>{{$candidate[0]->address_1}}</li>
+          <li><span>City:</span>{{$candidate[0]->city}}</li>
+          <li><span>State:</span>{{$candidate[0]->state}}</li>
+          <li><span>Country:</span>{{$candidate[0]->country}}</li>
+          <li><span>Telephone:</span>{{$candidate[0]->phone}}</li>
+          <li><span>Email:</span>{{auth()->user()->email}}</li>
         </ul>
       </div>
       <!-- End Address Sec -->

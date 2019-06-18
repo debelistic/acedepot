@@ -30,12 +30,12 @@ class CreateCandidatesTable extends Migration
             $table->string('state', 100);
             $table->string('country');
             $table->enum('status', ['hired', 'hunting', 'vacation'])->default('hunting');
-            $table->integer('num_of_applications')->default(0);
-            $table->integer('num_of_jobs_done')->default(0);
+            $table->integer('num_of_applications')->default(0)->nullable();
+            $table->integer('num_of_jobs_done')->default(0)->nullable();
             $table->string('skills');
             $table->longText('about');
-            $table->string('img_url');
-            $table->string('cv_url');
+            $table->string('img_url')->nullable();
+            $table->string('cv_url')->nullable();
             $table->timestamps();
         });
     }

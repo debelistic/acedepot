@@ -53,7 +53,10 @@
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Gender</label>
-            <input name="gender" type="text" class="form-control">
+            <input name="gender" type="radio" value="male" class="form-control">Male<br>
+            <input name="gender" type="radio" value="female" class="form-control">Female<br>
+            <input name="gender" type="radio" value="others" class="form-control">Others<br>
+            <input name="gender" type="radio" value="not specify" class="form-control">Not Specify<br>
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Highest Educational Qualification</label>
@@ -140,17 +143,7 @@
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Country</label>
-            <input id="country" data-input-name="country"
-            data-selected-country="NG"
-            data-button-size="btn-lg"
-            data-button-type="btn-warning"
-            data-scrollable="true"
-            data-scrollable-height="250px"
-            name="country" type="text" class="form-control">
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <label>Availiabilty</label>
-            <input name="status" type="text" class="form-control">
+            <input id="country" name="country" type="text" class="form-control">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Religion</label>
@@ -170,7 +163,7 @@
           </div>
           <div class="col-md-4 col-sm-6">
             <label>Skills</label>
-            <input name="skils" type="text" class="form-control" id="skills">
+            <input name="skills" type="text" class="form-control" id="skills">
           </div>
           <div class="col-md-4 col-sm-6">
             <label>About you</label>
@@ -216,7 +209,7 @@
             <option value='Zamfara'>Zamafara</option>
           </select> --}}
           <div class="col-sm-12">
-            <button type="submit" class="update-btn">Update Now</button>
+            <input type="submit" class="update-btn" value="Submit">
           </div>
         </form>
       </div>

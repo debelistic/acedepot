@@ -30,10 +30,19 @@ class CandidatesController extends Controller
      *
      * @return \App\Candidate;
      */
-    public function create($data)
+    public function create(Request $data)
     {
         //
         try {
+            $image = $data['img_url'];
+            $cv = $data['cv_url'];
+            
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $cvName = time().'.'.$cv->getClientOriginalExtension();
+
+            $image->move(public_path('images'), $imageName);
+            $cv->move(public_path('images'), $cvName);
+
             Candidate::create([
                 'middle_name' => $data['middle_name'],
                 'what_i_do' => $data['what_i_do'],
@@ -59,7 +68,9 @@ class CandidatesController extends Controller
             ]);
             return redirect('/candidate-dashboard');
         } catch (Illuminate\Database\QueryException $th) {
-            return back()->withError($th->getMessage())->withInput();
+            //back()->withError($th->getMessage())->withInput();
+            return redirect('candidateForm')->withError($th->getMessage())->withInput();
+
         }
     }
 

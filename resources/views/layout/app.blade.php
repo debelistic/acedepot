@@ -14,25 +14,25 @@
     
 	<!-- Styles -->
 	<!--Extra link-->
-	<link rel="stylesheet" type="text/css" href="{{asset('bootstrap/css/bootstrap.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('bootstrap/css/bootstrap.css')}}" />
 
-	<link rel="stylesheet" type="text/css" href="{{asset('css/css/vendor.bundle.css')}}" />
-	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/css/style.css')}}" /> --}}
-	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/css/vendor.bundle.css')}}" />
+	{{-- <link rel="stylesheet" type="text/css" href="{{URL::asset('css/css/style.css')}}" /> --}}
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/app.css')}}" />
 			
-	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-grid.css')}}" />
-	<link rel="stylesheet" href="{{asset('css/icons.css')}}">
-	<link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
-	<link rel="icon" type="image/png" href="{{asset('images/favicon.png')}}" sizes="16x16">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset('css/chosen.css')}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset('css/colors/colors.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/bootstrap-grid.css')}}" />
+	<link rel="stylesheet" href="{{URL::asset('css/icons.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('css/animate.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/style.css')}}" />
+	<link rel="icon" type="image/png" href="{{URL::asset('images/favicon.png')}}" sizes="16x16">
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/responsive.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/chosen.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/colors/colors.css')}}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-	<link rel="stylesheet" href="assets/plugins/css/plugins.css">      
-  <link href="assets/css/styles.css" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" id="jssDefault" href="assets/css/colors/green-style.css">
+	<link rel="stylesheet" href="{{URL::asset('assets/plugins/css/plugins.css')}}">      
+  <link href="{{URL::asset('assets/css/styles.css')}}" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" id="jssDefault" href="{{URL::asset('assets/css/colors/green-style.css')}}">
 	<!--Dynamic StyleSheets added from a view would be pasted here-->
 	@yield('styles')
 			

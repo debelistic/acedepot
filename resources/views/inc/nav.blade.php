@@ -8,7 +8,7 @@
 			<!-- Start Header Navigation -->
 			<div class="navbar-header">
 				<a class="navbar-brand" href=" ./">
-					<img class="logo logo-scrolled" src="images/newlogo.png" alt="acedepot" />
+					<img class="logo logo-scrolled" src="{{URL::asset('images/newlogo.png')}}" alt="acedepot" />
 				</a>
 			</div><!-- Logo -->
 			

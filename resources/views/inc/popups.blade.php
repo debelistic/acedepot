@@ -1,4 +1,4 @@
-<!-- Sign Up Window Code -->
+{{-- <!-- Sign Up Window Code -->
 <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -50,4 +50,4 @@
 			</div>
 	</div>
 </div>   
-	<!-- End Sign Up Window -->
+	<!-- End Sign Up Window --> --}}

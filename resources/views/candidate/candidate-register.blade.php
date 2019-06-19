@@ -224,7 +224,7 @@
             <option value='Zamfara'>Zamafara</option>
           </select> --}}
           <div class="col-sm-12">
-            <input type="submit" class="update-btn" value="Submit">
+            <button type="submit" class="update-btn">Submit</button>
           </div>
         </form>
       </div>

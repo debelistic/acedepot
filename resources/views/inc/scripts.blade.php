@@ -1,5 +1,5 @@
 <!--Imported code for Bootstrap-->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <!--End of Imported code for Bootstrap-->
@@ -26,23 +26,23 @@
 {{-- New Theme --}}
 <!-- Scripts
 			================================================== -->
-			<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="assets/plugins/js/jquery.min.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/viewportchecker.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/bootsnav.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/select2.min.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/wysihtml5-0.3.0.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/bootstrap-wysihtml5.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/datedropper.min.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/dropzone.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/loader.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/owl.carousel.min.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/slick.min.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/gmap3.min.js"></script>
-			<script type="text/javascript" src="assets/plugins/js/jquery.easy-autocomplete.min.js"></script>
+			<script data-cfasync="false" src="{{URL::asset('cloudflare-static/email-decode.min.js')}}"></script><script type="text/javascript" src="{{URL::asset('assets/plugins/js/jquery.min.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/viewportchecker.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/bootstrap.min.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/bootsnav.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/select2.min.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/wysihtml5-0.3.0.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/bootstrap-wysihtml5.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/datedropper.min.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/dropzone.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/loader.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/owl.carousel.min.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/slick.min.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/gmap3.min.js')}}"></script>
+			<script type="text/javascript" src="{{URL::asset('assets/plugins/js/jquery.easy-autocomplete.min.js')}}"></script>
 			<!-- Custom Js -->
-			<script src="assets/js/custom.js"></script>
-			<script src="assets/js/jQuery.style.switcher.js"></script>
+			<script src="{{URL::asset('assets/js/custom.js')}}"></script>
+			<script src="{{URL::asset('assets/js/jQuery.style.switcher.js')}}"></script>
 			<script type="text/javascript">
 				$(document).ready(function() {
 					$('#styleOptions').styleSwitcher();

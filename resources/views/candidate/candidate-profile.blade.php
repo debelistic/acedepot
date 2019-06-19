@@ -282,94 +282,214 @@
       
       
       <!-- Start Settings -->
-      <div id="settings" class="tab-pane fade">
+      <div id="settings" class="tab-pane">
         <div class="row no-mrg">
           <h3>Edit Profile</h3>
-          <form class="edit-pro">
+          <form class="edit-pro" method="POST" action="{{ route('createCandidate') }}">
+            {{ csrf_field() }}
             <div class="col-md-4 col-sm-6">
               <label>First Name</label>
-              <input type="text" class="form-control" placeholder="Matthew">
+              <input name="first_name" type="text" class="form-control" value={{Auth::user()->first_name}}>
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Middle Name</label>
-              <input type="text" class="form-control" placeholder="Else">
+              <input name="middle_name" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Last Name</label>
-              <input type="text" class="form-control" placeholder="Dana">
+              <input name="last_name" type="text" class="form-control" value={{Auth::user()->last_name}}>
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Email</label>
-              <input type="email" class="form-control" placeholder="dana.mathew@gmail.com">
+              <input name="email" type="email" class="form-control" value={{Auth::user()->email}}>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <label>Job Title</label>
+              <input name="what_i_do" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Phone</label>
-              <input type="text" class="form-control" placeholder="+91 258 475 6859">
+              <input name="phone" type="tel" class="form-control" id="phone">
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-4 col-sm-6">
+              <label>Age</label>
+              <input name="age" type="date" class="form-control" >
             </div>
             <div class="col-md-4 col-sm-6">
-              <label>Zip / Postal</label>
-              <input type="text" class="form-control" placeholder="258 457 528">
+              <label>Gender</label><br>
+              <input name="gender" type="radio" value="male" class="form-control"><span>Male</span>
+              <input name="gender" type="radio" value="female" class="form-control"><span>Female</span>
+              <input name="gender" type="radio" value="others" class="form-control"><span>Others</span>
             </div>
+            <div class="col-md-4 col-sm-6">
+              <label>Highest Educational Qualification</label>
+              <input list="edu_level" name="highest_qualification" type="text" class="form-control">
+              <datalist id="edu_level">
+                <option value="No formal education">
+                <option value="Primary school">
+                <option value="Secondary school">
+                <option value="Technical school">
+                <option value="NCE">
+                <option value="ND I">
+                <option value="ND II">
+                <option value="First Degree">
+                <option value="PG Degree">
+              </datalist>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <label>Status</label>
+                <input list="available" name="status" type="text" class="form-control">
+                <datalist id="available">
+                  <option value="Hired">
+                  <option value="Hunting">
+                  <option value="Vacation">
+                </datalist>
+              </div>
             <div class="col-md-4 col-sm-6">
               <label>Address</label>
-              <input type="text" class="form-control" placeholder="204 Lowes Alley">
+              <input name="address_1" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Address 2</label>
-              <input type="text" class="form-control" placeholder="Software Developer">
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <label>Organization</label>
-              <input type="text" class="form-control" placeholder="Software Developer">
+              <input name="address_2" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
               <label>City</label>
-              <input type="text" class="form-control" placeholder="Chandigarh">
+              <input name="city" type="text" class="form-control">
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <label>Loal Government/Province</label>
+              <input name="lga" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
               <label>State</label>
-              <input type="text" class="form-control" placeholder="Punjab">
+              <input id="state" list="states" name="state" type="text" class="form-control">
+              <datalist name="ostate" id="states">
+                <option selected="selected">Select item...</option>
+                <option value='Abia'>Abia</option>
+                <option value='Adamawa'>Adamawa</option>
+                <option value='AkwaIbom'>AkwaIbom</option>
+                <option value='Anambra'>Anambra</option>
+                <option value='Bauchi'>Bauchi</option>
+                <option value='Bayelsa'>Bayelsa</option>
+                <option value='Benue'>Benue</option>
+                <option value='Borno'>Borno</option>
+                <option value='CrossRivers'>CrossRivers</option>
+                <option value='Delta'>Delta</option>
+                <option value='Ebonyi'>Ebonyi</option>
+                <option value='Edo'>Edo</option>
+                <option value='Ekiti'>Ekiti</option>
+                <option value='Enugu'>Enugu</option>
+                <option value='Gombe'>Gombe</option>
+                <option value='Imo'>Imo</option>
+                <option value='Jigawa'>Jigawa</option>
+                <option value='Kaduna'>Kaduna</option>
+                <option value='Kano'>Kano</option>
+                <option value='Katsina'>Katsina</option>
+                <option value='Kebbi'>Kebbi</option>
+                <option value='Kogi'>Kogi</option>
+                <option value='Kwara'>Kwara</option>
+                <option value='Lagos'>Lagos</option>
+                <option value='Nasarawa'>Nasarawa</option>
+                <option value='Niger'>Niger</option>
+                <option value='Ogun'>Ogun</option>
+                <option value='Ondo'>Ondo</option>
+                <option value='Osun'>Osun</option>
+                <option value='Oyo'>Oyo</option>
+                <option value='Plateau'>Plateau</option>
+                <option value='Rivers'>Rivers</option>
+                <option value='Sokoto'>Sokoto</option>
+                <option value='Taraba'>Taraba</option>
+                <option value='Yobe'>Yobe</option>
+                <option value='Zamfara'>Zamafara</option>
+              </datalist>
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Country</label>
-              <input type="text" class="form-control" placeholder="India">
+              <input id="country" name="country" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
-              <label>Old Password</label>
-              <input type="password" class="form-control" placeholder="*********">
+              <label>Religion</label>
+              <input name="religion" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
-              <label>New Password</label>
-              <input type="password" class="form-control" placeholder="*********">
+              <label>Facebook Url</label>
+              <input name="fb_url" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
-              <label>Old Password</label>
-              <input type="password" class="form-control" placeholder="*********">
+              <label>Twitter Url</label>
+              <input name="twt_url" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
-              <label>About you</label>
-              <textarea class="form-control" placeholder="Write Something"></textarea>
+              <label>Linked Url</label>
+              <input name="lnkd_url" type="text" class="form-control">
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <label>Linked Url</label>
+              <input name="ext_web_url" type="text" class="form-control">
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Upload Profile Pic</label>
-              <div class="dropzone dz-clickable profile-pic">
-                <div class="dz-default dz-message">
-                  <i class="fa fa-cloud-upload"></i>
-                  <span>Drop files here to upload</span>
-                </div>
+              <div class="dz-default dz-message">
+                <input accept="image/*" name="img_url" type="file" class="form-control">
               </div>
             </div>
             <div class="col-md-4 col-sm-6">
               <label>Upload Profile Cover</label>
-              <div class="dropzone dz-clickable profile-cover">
-                <div class="dz-default dz-message">
-                  <i class="fa fa-cloud-upload"></i>
-                  <span>Drop files here to upload</span>
-                </div>
+              <div class="dz-default dz-message">
+                <input accept=".pdf" name="cv_url" type="file" class="form-control">
               </div>
             </div>
+            <div class="col-md-4 col-sm-6">
+              <label>Skills</label>
+              <input name="skills" type="text" class="form-control" id="skills">
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <label>About you</label>
+              <textarea name="about" class="form-control" placeholder="Write Something"></textarea>
+            </div>
+            {{-- <select name="ostate" id="ostate">
+              <option selected="selected">Select item...</option>
+              <option value='Abia'>Abia</option>
+              <option value='Adamawa'>Adamawa</option>
+              <option value='AkwaIbom'>AkwaIbom</option>
+              <option value='Anambra'>Anambra</option>
+              <option value='Bauchi'>Bauchi</option>
+              <option value='Bayelsa'>Bayelsa</option>
+              <option value='Benue'>Benue</option>
+              <option value='Borno'>Borno</option>
+              <option value='CrossRivers'>CrossRivers</option>
+              <option value='Delta'>Delta</option>
+              <option value='Ebonyi'>Ebonyi</option>
+              <option value='Edo'>Edo</option>
+              <option value='Ekiti'>Ekiti</option>
+              <option value='Enugu'>Enugu</option>
+              <option value='Gombe'>Gombe</option>
+              <option value='Imo'>Imo</option>
+              <option value='Jigawa'>Jigawa</option>
+              <option value='Kaduna'>Kaduna</option>
+              <option value='Kano'>Kano</option>
+              <option value='Katsina'>Katsina</option>
+              <option value='Kebbi'>Kebbi</option>
+              <option value='Kogi'>Kogi</option>
+              <option value='Kwara'>Kwara</option>
+              <option value='Lagos'>Lagos</option>
+              <option value='Nasarawa'>Nasarawa</option>
+              <option value='Niger'>Niger</option>
+              <option value='Ogun'>Ogun</option>
+              <option value='Ondo'>Ondo</option>
+              <option value='Osun'>Osun</option>
+              <option value='Oyo'>Oyo</option>
+              <option value='Plateau'>Plateau</option>
+              <option value='Rivers'>Rivers</option>
+              <option value='Sokoto'>Sokoto</option>
+              <option value='Taraba'>Taraba</option>
+              <option value='Yobe'>Yobe</option>
+              <option value='Zamfara'>Zamafara</option>
+            </select> --}}
             <div class="col-sm-12">
-              <button type="button" class="update-btn">Update Now</button>
+              <button type="submit" class="update-btn" >Update</button>
             </div>
           </form>
         </div>

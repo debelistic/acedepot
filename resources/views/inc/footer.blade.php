@@ -3,7 +3,7 @@
     <div class="container">
       <div class="col-md-4 col-sm-4">
         {{-- <div class="logo"> --}}
-          <a href=" ./"><img src="images/newlogo.png" class="img-responsive" alt="logo" /></a>
+          <a href=" ./"><img src="{{URL::asset('images/newlogo.png')}}" class="img-responsive" alt="logo" /></a>
         {{-- </div> --}}
       </div>
       <div class="col-md-8 co-sm-8 pull-right">

@@ -28,11 +28,11 @@ class VerificationController extends Controller
     protected function redirectTo()
     {
         if (auth()->user()->role === 'candidate') {
-            return '/candidate_dashboard';
+            return '/candidate-register';
         }else if (auth()->user()->role === 'employer') {
-            return '/employer_dashboard';
+            return '/employer-register';
         }else if (auth()->user()->role === 'contractor') {
-            return '/contractor_dashboard';
+            return '/contractor-register';
         }
     }
 

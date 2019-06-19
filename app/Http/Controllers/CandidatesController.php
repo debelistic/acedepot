@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Auth;
+use Hash;
+use Storage;
 
 
 class CandidatesController extends Controller
@@ -36,14 +39,62 @@ class CandidatesController extends Controller
     {
         //
         try {
-            // $image = $data['img_url'];
-            // $cv = $data['cv_url'];
-            
-            // $imageName = time().'.'.$image->getClientOriginalExtension();
-            // $cvName = time().'.'.$cv->getClientOriginalExtension();
 
-            // $image->move(public_path('images'), $imageName);
-            // $cv->move(public_path('images'), $cvName);
+            $this.validate($data, [
+                'middle_name' => ['required', 'string', 'max:255'],
+                'what_i_do' => ['required', 'string', 'max:255'],
+                'phone' => ['required', 'string', 'max:20'],
+                'age' => ['required', 'date', 'max:255'],
+                'gender' => [
+                    'required',
+                    Rule::in(['male', 'female', 'others']),
+                ],
+                'religion' => ['nullable', 'string', 'max:255'],
+                'address_1'=> ['required', 'string', 'max:255'],
+                'address_2' => ['required', 'string', 'max:255'],
+                'city' => ['required', 'string', 'max:255'],
+                'highest_qualification' => [
+                    'required',
+                    Rule::in(['no formal education','primary school', 'secondary school', 'technical school', 'nce', 'nd1', 'nd2', 'bsc', 'pgd']),
+                ],
+                'discipline' => ['nullable', 'string', 'max:255'],
+                'lga' => ['required', 'string', 'max:255'],
+                'state' => ['required', 'string', 'max:255'],
+                'country' => ['required', 'string', 'max:255'],
+                'status' => [
+                    'required',
+                    Rules::in(['hired', 'hunting', 'vacation']),
+                ],
+                'num_of_applications' => ['nullable', 'string', 'max:255'],
+                'num_of_jobs_done' => ['nullable', 'string', 'max:255'],
+                'skills' => ['required', 'array'],
+                'about' => ['required', 'string'],
+                'img_url' => ['required', 'image'],
+                'cv_url' => ['nullable', 'file'],
+                'fb_url' => ['nullable', 'url'],
+                'twt_url' => ['nullable', 'url'],
+                'ig_url' => ['nullable', 'url'],
+                'ext_url' => ['nullable', 'url'],
+                'lnkd_url' => ['nullable', 'url'],
+            ]);
+
+            if($data->hasFile('img_url')){
+                $user_img = $data->img_url;
+                $ext = $user_img->getClientOriginalExtension();
+                $pro_img = random_bytes(7).'.'.$ext;
+                $user_img->storeAs('public/pics',$pro_img);
+                $data->img_url = $pro_img;
+            }
+
+            if($data->hasFile('cv_url')){
+                $user_cv = $data->cv_url;
+                $ext = $user_cv->getClientOriginalExtension();
+                $cand_cv = random_bytes(7).'.'.$ext;
+                $user_cv->storeAs('public/pics',$cand_cv);
+                $data->cv_url = $cand_cv;
+            }
+            
+
 
             Candidate::create([
                 'middle_name' => $data['middle_name'],
@@ -57,6 +108,7 @@ class CandidatesController extends Controller
                 'address_2' => $data['address_2'],
                 'city' => $data['city'],
                 'highest_qualification' => $data['highest_qualification'],
+                'discipline' => $data['discipline'],
                 'lga' => $data['lga'],
                 'state' => $data['state'],
                 'country' => $data['country'],
@@ -69,13 +121,13 @@ class CandidatesController extends Controller
                 'cv_url' => $data['cv_url'],
                 'fb_url' => $data['fb_url'],
                 'twt_url' => $data['twt_url'],
+                'ig_url' => $data['ig_url'],
                 'lnkd_url' => $data['lnkd_url'],
                 'ext_url' => $data['ext_web_url'],
             ]);
-            return redirect('/candidate-dashboard');
+            return redirect('/candidate-dashboard')->with('status', 'Your information has been stored');
         } catch (Illuminate\Database\QueryException $th) {
-            //back()->withError($th->getMessage())->withInput();
-            return redirect('candidateForm')->withError($th->getMessage())->withInput();
+            return redirect('/candidate-register')->withError($th->getMessage())->withInput();
 
         }
     }

@@ -18,6 +18,7 @@ class Candidate extends Model
                 'address_2',
                 'city',
                 'highest_qualification',
+                'discipline',
                 'lga',
                 'state',
                 'country',
@@ -31,7 +32,8 @@ class Candidate extends Model
                 'fb_url',
                 'twt_url',
                 'lnkd_url',
-                'ext_web_url'
+                'ext_web_url',
+                'ig_url',
     ];
 
 
@@ -39,5 +41,9 @@ class Candidate extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    protected $casts = [
+        'shifts' => 'array'
+    ];
     
 }

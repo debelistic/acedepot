@@ -94,13 +94,11 @@ label::before, label::after {
 }
 
 .auth_input{
-  margin: 1.2rem;
-  height: 5rem;
+  margin: 1rem;
 }
 
 label{
   padding: 0;
-  margin-top: 20px;
   font-size: 1.5rem;
   font-weight: bold;
   display: block;
@@ -112,11 +110,11 @@ input[type="password"]{
   border-bottom: 4px solid #fda502;
   background-color: #fff !important;
   padding: 0.7rem;
-  height: 4rem;
   font-size: 1.5rem;
   cursor: text;
   margin: 0;
   outline: none;
+  float: none;
 }
 
 input[type="checkbox"]{
@@ -126,6 +124,13 @@ input[type="checkbox"]{
   position: relative;
   opacity: 1;
   z-index: 1;
+}
+
+input[type="email"]:hover,
+input[type="text"]:hover,
+input[type="password"]:hover{
+  border: 0;
+  border-bottom: 4px solid #fda502;
 }
 
 .checkbox_label{
@@ -148,8 +153,8 @@ input[type="submit"]{
 input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus{
-  color: #fda502;
-  background-color: #24324a;
+  color: #fff;
+  background-color: #fda502;
 }
 
 .form-control:focus{
@@ -158,7 +163,7 @@ input[type="submit"]:focus{
   box-shadow: none;
 }
 
-a.auth_options{
+a.auth_options, p.auth_options{
   margin: 0.7em 0.7em 1.2em 0.7em;
   color: #fda502;
   font-weight: 700;
@@ -175,7 +180,6 @@ select.soflow-color {
   margin: 1.2rem;
   height: 3rem;
 }
-
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 

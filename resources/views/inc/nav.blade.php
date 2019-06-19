@@ -61,6 +61,7 @@
 							<li class=" ">
 									<a class=" " href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i>{{ __('Login') }}</a>
 							</li>
+							<li><a href="contact">Connect</a></li>
 							@if (Route::has('register'))
 									<li class="left-br">
 											<a href="{{ route('register') }}" class="signin">{{__('Sign Up Now')}}</a></li>

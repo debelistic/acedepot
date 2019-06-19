@@ -541,6 +541,7 @@ select, options {
 }
 .banner-slider {
     height: calc(100vh - 120px);
+    margin-top: 135px;
 }
 .error-sec > p {
     display: none;

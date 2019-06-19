@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 	
-    
+
 <section class="auth_form_area">
 		@if (session('error'))
 			<div class="error-logger alert alert-danger">{{ session('error') }}</div>
@@ -31,32 +31,36 @@
 							<p class="role_detail">Search, request and hire your ideal candidates and contractors on AceDepot </p>
 					</div>
 				</div>
-			</div>			
+			</div>
 		</div>
 	</main>
 	<aside class="auth_form">
 		<h2 class="auth_header">{{ __('Register') }}</h2>
 
 		<div class="">
-			<select name="role" form="user_register" class="soflow-color auth_input">
-				<option>Select Your Role</option>
-				<option value="candidate">Candidate</option>
-				<option value="contractor">Contractor</option>
-				<option value="employer">Employer</option>
-			</select>
-			@error('role')
-				<span class="invalid-feedback" role="alert">
-					<strong>{{ $message }}</strong>
-				</span>
-			@enderror
+			
 			<form method="POST" action="{{ route('register') }}" id="user_register">
 				@csrf
+
+				<div class="auth_input">
+					<select name="role" id="role" class="soflow-color auth_input">
+						<option selected>Select Your Role</option>
+						<option value="candidate">Candidate</option>
+						<option value="contractor">Contractor</option>
+						<option value="employer">Employer</option>
+					</select>
+					@error('role')
+						<span class="invalid-feedback" role="alert">
+							<strong>{{ $message }}</strong>
+						</span>
+					@enderror
+				</div>
 
 				<div class="auth_input">
 					<label for="first_name" class="">
 						<span class="content_name">{{ __('First Name') }}</span>
 					</label>
-					<input id="first_name" type="text" class="form-control @error('name') is-invalid @enderror" name="first_name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+					<input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required>
 					@error('first_name')
 						<span class="invalid-feedback" role="alert">
 							<strong>{{ $message }}</strong>
@@ -68,7 +72,7 @@
 					<label for="last_name" class="">
 						<span class="content_name">{{ __('Last Name') }}</span>
 					</label>
-					<input id="last_name" type="text" class="form-control @error('name') is-invalid @enderror" name="last_name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+					<input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required >
 					@error('last_name')
 						<span class="invalid-feedback" role="alert">
 							<strong>{{ $message }}</strong>
@@ -92,7 +96,7 @@
 					<label for="password" class="">
 						<span class="content_name">{{ __('Password') }}</span>
 					</label>
-					<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+					<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required>
 					@error('password')
 						<span class="invalid-feedback" role="alert">
 							<strong>{{ $message }}</strong>
@@ -104,11 +108,12 @@
 					<label for="password-confirm" class="">
 						<span class="content_name">{{ __('Confirm Password') }}</span>
 					</label>
-					<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+					<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
 				</div>
 				<input type="submit" class="btn btn-primary" value="{{ __('Register') }}">
 				<div class="">
-					<a class="auth_options" href="{{route('login')}}">have an account <span class="signup login_form">signin</span></a>
+					<p class="auth_options">By registering you agree to our terms and conditions</p>
+					<p><a class="auth_options" href="{{route('login')}}">have an account signin</a></p>
 				</div>
 			</form>
 		</div>

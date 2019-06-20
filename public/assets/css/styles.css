@@ -6068,6 +6068,11 @@ h5.text-lighter small {
 .edit-pro .form-control {
     margin-bottom: 17px;
 }
+select.form-control,
+input[type=date]{
+    background: #e4e4e4;
+}
+
 form.dropzone, div.dropzone{
     color: #fda502;
     background: rgba(1, 178, 172,0.07);

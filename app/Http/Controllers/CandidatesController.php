@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Auth;
 use Hash;
 use Storage;
@@ -39,8 +40,7 @@ class CandidatesController extends Controller
     {
         //
         try {
-
-            $this.validate($data, [
+            $validated = $this->validate($data, [
                 'middle_name' => ['required', 'string', 'max:255'],
                 'what_i_do' => ['required', 'string', 'max:255'],
                 'phone' => ['required', 'string', 'max:20'],
@@ -63,11 +63,11 @@ class CandidatesController extends Controller
                 'country' => ['required', 'string', 'max:255'],
                 'status' => [
                     'required',
-                    Rules::in(['hired', 'hunting', 'vacation']),
+                    Rule::in(['hired', 'hunting', 'vacation']),
                 ],
                 'num_of_applications' => ['nullable', 'string', 'max:255'],
                 'num_of_jobs_done' => ['nullable', 'string', 'max:255'],
-                'skills' => ['required', 'array'],
+                'skills' => ['required', 'string'],
                 'about' => ['required', 'string'],
                 'img_url' => ['required', 'image'],
                 'cv_url' => ['nullable', 'file'],
@@ -78,7 +78,10 @@ class CandidatesController extends Controller
                 'lnkd_url' => ['nullable', 'url'],
             ]);
 
-            if($data->hasFile('img_url')){
+            dd($validated);
+
+
+            /*if($data->hasFile('img_url')){
                 $user_img = $data->img_url;
                 $ext = $user_img->getClientOriginalExtension();
                 $pro_img = random_bytes(7).'.'.$ext;
@@ -125,7 +128,7 @@ class CandidatesController extends Controller
                 'lnkd_url' => $data['lnkd_url'],
                 'ext_url' => $data['ext_web_url'],
             ]);
-            return redirect('/candidate-dashboard')->with('status', 'Your information has been stored');
+            return redirect('/candidate-dashboard')->with('status', 'Your information has been stored');*/
         } catch (Illuminate\Database\QueryException $th) {
             return redirect('/candidate-register')->withError($th->getMessage())->withInput();
 
@@ -169,7 +172,7 @@ class CandidatesController extends Controller
      */
     public function edit($id)
     {
-        //
+        //if(auth()->user()->role)
     }
 
     /**

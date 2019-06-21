@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+   || {{auth()->user()->first_name}} {{auth()->user()->last_name}}'s Page
+@endsection
+
 {{-- @section('styles')
   
 @endsection() --}}

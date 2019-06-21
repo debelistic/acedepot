@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+   || Login
+@endsection
+
 @section('styles')
 	<link rel="stylesheet" type="text/css" href="{{asset('css/auth.css')}}" />
 @endsection

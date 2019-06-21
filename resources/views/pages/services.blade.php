@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+   || Services
+@endsection
+
 @section('content')
   <section class="overlape">
 		<div class="block no-padding">

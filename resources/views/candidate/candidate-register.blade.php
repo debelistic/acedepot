@@ -1,6 +1,8 @@
 @extends('layout.app')
 @section('title')
    || Candidate Registration
+@endsection@section('title')
+   || Candidate Registration
 @endsection
 @section('styles')
   <link rel="stylesheet" href="build/css/intlTelInput.css">

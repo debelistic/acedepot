@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+   || Password Reset
+@endsection
+
 @section('content')
     <section class="top-sec-margin">
             <div class="container">

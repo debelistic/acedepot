@@ -40,7 +40,7 @@ class CandidatesController extends Controller
     {
         //
         try {
-            $validated = $this->validate($data, [
+            $this->validate($data, [
                 'middle_name' => ['required', 'string', 'max:255'],
                 'what_i_do' => ['required', 'string', 'max:255'],
                 'phone' => ['required', 'string', 'max:20'],
@@ -54,7 +54,7 @@ class CandidatesController extends Controller
                 'address_2' => ['required', 'string', 'max:255'],
                 'city' => ['required', 'string', 'max:255'],
                 'highest_qualification' => [
-                    'required',
+                     'required',
                     Rule::in(['no formal education','primary school', 'secondary school', 'technical school', 'nce', 'nd1', 'nd2', 'bsc', 'pgd']),
                 ],
                 'discipline' => ['nullable', 'string', 'max:255'],
@@ -65,23 +65,21 @@ class CandidatesController extends Controller
                     'required',
                     Rule::in(['hired', 'hunting', 'vacation']),
                 ],
-                'num_of_applications' => ['nullable', 'string', 'max:255'],
-                'num_of_jobs_done' => ['nullable', 'string', 'max:255'],
                 'skills' => ['required', 'string'],
                 'about' => ['required', 'string'],
-                'img_url' => ['required', 'image'],
-                'cv_url' => ['nullable', 'file'],
-                'fb_url' => ['nullable', 'url'],
-                'twt_url' => ['nullable', 'url'],
-                'ig_url' => ['nullable', 'url'],
-                'ext_url' => ['nullable', 'url'],
-                'lnkd_url' => ['nullable', 'url'],
+                'fb_url' => ['nullable', 'string'],
+                'twt_url' => ['nullable', 'string'],
+                'ig_url' => ['nullable', 'string'],
+                'ext_url' => ['nullable', 'string'],
+                'lnkd_url' => ['required', 'string'],
+                'img_url' => ['nullable', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+                'cv_url' => ['nullable', 'mimes:pdf,doc,docx', 'max:4000'],
             ]);
 
-            dd($validated);
 
+            if($data->hasFile('img_url')){
+                //validate
 
-            /*if($data->hasFile('img_url')){
                 $user_img = $data->img_url;
                 $ext = $user_img->getClientOriginalExtension();
                 $pro_img = random_bytes(7).'.'.$ext;
@@ -90,6 +88,8 @@ class CandidatesController extends Controller
             }
 
             if($data->hasFile('cv_url')){
+                //validate
+
                 $user_cv = $data->cv_url;
                 $ext = $user_cv->getClientOriginalExtension();
                 $cand_cv = random_bytes(7).'.'.$ext;
@@ -97,9 +97,9 @@ class CandidatesController extends Controller
                 $data->cv_url = $cand_cv;
             }
             
+            return redirect('/');
 
-
-            Candidate::create([
+            /*Candidate::create([
                 'middle_name' => $data['middle_name'],
                 'what_i_do' => $data['what_i_do'],
                 'candidate_id' => auth()->user()->id,

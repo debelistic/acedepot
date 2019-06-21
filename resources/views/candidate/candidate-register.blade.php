@@ -1,4 +1,7 @@
 @extends('layout.app')
+@section('title')
+   || Candidate Registration
+@endsection
 @section('styles')
   <link rel="stylesheet" href="build/css/intlTelInput.css">
   <link rel="stylesheet" type="text/css" href="jquery.tagsinput.css" />
@@ -20,7 +23,7 @@
     <div id="settings" class="tab-pane">
       <div class="row no-mrg">
         <h3>Edit Profile</h3>
-        <form class="edit-pro" method="POST" action="{{ route('createCandidate') }}">
+        <form class="edit-pro" method="POST" action="{{ route('createCandidate') }}" enctype="multipart/form-data">
           {{ csrf_field() }}
           <div class="col-md-4 col-sm-6">
             <label>First Name</label>
@@ -105,8 +108,8 @@
 
 
           <div class="col-md-4 col-sm-6">
-            <label for="edu_level">Highest Educational Qualification</label>
-            <select name="edu_level" class="form-control @error('edu_level') is-invalid @enderror">
+            <label for="highest_qualification">Highest Educational Qualification</label>
+            <select name="highest_qualification" class="form-control @error('highest_qualification') is-invalid @enderror">
               <option value="no formal education">No formal education</option>
               <option value="primary school">Primary school</option>
               <option value="secondary school">Secondary school</option>
@@ -117,7 +120,7 @@
               <option value="bsc">First Degree</option>
               <option value="pgd">PG Degree</option>
             </select>
-            @error('edu_level')
+            @error('highest_qualification')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
               </span>
@@ -197,7 +200,6 @@
           <div class="col-md-4 col-sm-6">
             <label>State</label>
             <select name="state" id="states" class="form-control @error('state') is-invalid @enderror">
-              <option selected="selected">Select state...</option>
               <option value='Abia'>Abia</option>
               <option value='Adamawa'>Adamawa</option>
               <option value='AkwaIbom'>AkwaIbom</option>
@@ -511,7 +513,7 @@
 
 
           <div class="col-md-4 col-sm-6">
-            <label>Facebook Url</label>
+            <label>Facebook Username</label>
             <input name="fb_url" type="text" class="form-control @error('fb_url') is-invalid @enderror">
             @error('fb_url')
               <span class="invalid-feedback" role="alert">
@@ -521,7 +523,7 @@
           </div>
 
           <div class="col-md-4 col-sm-6">
-            <label>Twitter Url</label>
+            <label>Twitter Username</label>
             <input name="twt_url" type="text" class="form-control @error('twt_url') is-invalid @enderror">
             @error('twt_url')
               <span class="invalid-feedback" role="alert">
@@ -532,7 +534,7 @@
 
 
           <div class="col-md-4 col-sm-6">
-            <label>Linked Url</label>
+            <label>Linked Username</label>
             <input name="lnkd_url" type="text" class="form-control @error('lnkd_url') is-invalid @enderror">
             @error('lnkd_url')
               <span class="invalid-feedback" role="alert">
@@ -542,7 +544,7 @@
           </div>
 
           <div class="col-md-4 col-sm-6">
-            <label>Instagram Url</label>
+            <label>Instagram Username</label>
             <input name="ig_url" type="text" class="form-control @error('ig_url') is-invalid @enderror">
             @error('ig_url')
               <span class="invalid-feedback" role="alert">

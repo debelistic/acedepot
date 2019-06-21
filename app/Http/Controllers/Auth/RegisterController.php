@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
+
 
 
 use Illuminate\Http\Request;
@@ -48,7 +50,10 @@ class RegisterController extends Controller
             $this->validate($data, [
                 'first_name' => ['required', 'string', 'max:255'],
                 'last_name' => ['required', 'string', 'max:255'],
-                'role' => ['required', 'string', 'max:50'],
+                'role' => [
+                    'required',
+                    Rule::in(['candidate', 'employer', 'contractor'])
+                ],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);

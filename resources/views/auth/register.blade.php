@@ -43,7 +43,7 @@
 				@csrf
 
 				<div class="auth_input">
-					<select name="role" id="role" class="soflow-color auth_input">
+					<select name="role" id="role" class="soflow-color auth_input form-control @error('role') is-invalid @enderror">
 						<option selected>Select Your Role</option>
 						<option value="candidate">Candidate</option>
 						<option value="contractor">Contractor</option>

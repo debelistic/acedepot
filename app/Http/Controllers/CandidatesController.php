@@ -83,8 +83,8 @@ class CandidatesController extends Controller
                 $user_img = $data->img_url;
                 $ext = $user_img->getClientOriginalExtension();
                 $pro_img = random_bytes(7).'.'.$ext;
-                $user_img->storeAs('public/pics',$pro_img);
-                $data->img_url = $pro_img;
+                dd($user_img->storeAs('public/pics', $pro_img));
+                //$data->img_url = $pro_img;
             }
 
             if($data->hasFile('cv_url')){
@@ -93,8 +93,8 @@ class CandidatesController extends Controller
                 $user_cv = $data->cv_url;
                 $ext = $user_cv->getClientOriginalExtension();
                 $cand_cv = random_bytes(7).'.'.$ext;
-                $user_cv->storeAs('public/pics',$cand_cv);
-                $data->cv_url = $cand_cv;
+                $user_cv->storeAs('public/cvs', $cand_cv);
+                // $data->cv_url = $cand_cv;
             }
             
             return redirect('/');
@@ -160,7 +160,11 @@ class CandidatesController extends Controller
         //dd($id);
         //return view('candidate.candidate-register')->with('user', auth()->user());
         //return $candidate;
-       return view('candidate.candidate-profile', compact('candidate'));
+        if($candidate){
+            return view('candidate.candidate-profile', compact('candidate'));
+        }
+        return view('candidate.candidate-register')->with('user', auth()->user())->with('status', 'Create your job profile');
+
 
     }
 

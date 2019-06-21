@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-//use AuthenticatesUsers;
+use App\Candidate;
+use Illuminate\Database\Eloquent\Model;
 use Lang;
 
 class LoginController extends Controller
@@ -67,8 +68,13 @@ class LoginController extends Controller
      * Redirect to dashboard if success
      */
     protected function authenticated(Request $request, $user) {
+        $id = auth()->user()->id;
+        $candidate = Candidate::where('candidate_id', $id)->get();
         if ($user->role == 'candidate') {
-            return redirect('/candidate-dashboard');
+            if($candidate == null){
+                return redirect('/candidate-dashboard');
+            }
+            return redirect('/candidate-register');
         } else if ($user->role == 'employer') {
             return redirect('/employer-dashboard');
         } else if ($user->role == 'contractor') {

@@ -6461,6 +6461,7 @@ a.close.disabled {
   position: relative;
   width: 100%;
   overflow: hidden;
+  height: 100%;
 }
 
 .carousel-inner::after {
@@ -6511,6 +6512,7 @@ a.close.disabled {
   transition-property: opacity;
   -webkit-transform: none;
           transform: none;
+  height: 100%;
 }
 
 .carousel-fade .carousel-item.active,

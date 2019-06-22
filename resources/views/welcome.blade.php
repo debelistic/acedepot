@@ -9,74 +9,76 @@
 @endsection
 
 @section('content')
-
+	
 	<div id="slider" class="banner banner-slider carousel slide carousel-fade" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			</ol>
-			<!-- Wrapper for Slides -->
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img class="d-block w-100 car-img" src="images/slider/newslider1.jpg" alt="First slide">
-						<div class="carousel-caption d-none d-md-block">
-							<p>We are AceDepot and we’ve got you covered. Search through our depot of ace candidates, businesses and companies for the quality products and services that you desire</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100 car-img" src="images/slider/newslider8.jpg" alt="Eight slide">
-						<div class="carousel-caption d-none d-md-block">
-							<p>Be a boss! Hire candidates and contractors on your devices in the shortest possible time and at your convenience on AceDepot</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100 car-img" src="images/slider/newslider2.jpg" alt="Second slide">
-						<div class="carousel-caption d-none d-md-block">
-								<p>New to a place and need any type of worker? Look no farther, locate the nearest one around you on AceDepot</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100 car-img" src="images/slider/newslider3.jpg" alt="Third slide">
-						<div class="carousel-caption d-none d-md-block">
-							<p>The reward for a good work is more work. Get your satisfied customers to attest to your good products and services on your company profile, increase customer traffic by displaying your quality products and services!</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100 car-img" src="images/slider/newslider4.jpeg" alt="Fourth slide">
-						<div class="carousel-caption d-none d-md-block">
-							<p>Plan your projects from ground up. Find out what the leading businesses and companies in various fields have to offer from their profiles and select services that most appeal to you</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100 car-img" src="images/slider/newslider5.jpg" alt="Fifth slide">
-						<div class="carousel-caption d-none d-md-block">
-							<p>Looking for a part-time, temporary or permanent job? Register and apply today on AceDepot!</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100 car-img" src="images/slider/newslider6.jpg" alt="Sixth slide">
-						<div class="carousel-caption d-none d-md-block">
-							<p>Every home and office deserves the best. Eliminate the stress of looking for trained and qualified domestic staff, find them here on AceDepot!</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100 car-img" src="images/slider/newslider7.jpeg" alt="Seventh slide">
-						<div class="carousel-caption d-none d-md-block">
-							<p>Make every detail of your event colorful and memorable by choosing the right location, staff and services on AceDepot</p>
-						</div>
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<!-- Wrapper for Slides -->
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100 car-img" src="images/slider/newslider1.jpg" alt="First slide">
+					<div class="carousel-caption d-none d-md-block">
+						<p>We are AceDepot and we’ve got you covered. Search through our depot of ace candidates, businesses and companies for the quality products and services that you desire</p>
 					</div>
 				</div>
-				<!-- Left and right controls -->
-				<a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#slider" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
+				<div class="carousel-item">
+					<img class="d-block w-100 car-img" src="images/slider/newslider8.jpg" alt="Eight slide">
+					<div class="carousel-caption d-none d-md-block">
+						<p>Be a boss! Hire candidates and contractors on your devices in the shortest possible time and at your convenience on AceDepot</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100 car-img" src="images/slider/newslider2.jpg" alt="Second slide">
+					<div class="carousel-caption d-none d-md-block">
+							<p>New to a place and need any type of worker? Look no farther, locate the nearest one around you on AceDepot</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100 car-img" src="images/slider/newslider3.jpg" alt="Third slide">
+					<div class="carousel-caption d-none d-md-block">
+						<p>The reward for a good work is more work. Get your satisfied customers to attest to your good products and services on your company profile, increase customer traffic by displaying your quality products and services!</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100 car-img" src="images/slider/newslider4.jpeg" alt="Fourth slide">
+					<div class="carousel-caption d-none d-md-block">
+						<p>Plan your projects from ground up. Find out what the leading businesses and companies in various fields have to offer from their profiles and select services that most appeal to you</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100 car-img" src="images/slider/newslider5.jpg" alt="Fifth slide">
+					<div class="carousel-caption d-none d-md-block">
+						<p>Looking for a part-time, temporary or permanent job? Register and apply today on AceDepot!</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100 car-img" src="images/slider/newslider6.jpg" alt="Sixth slide">
+					<div class="carousel-caption d-none d-md-block">
+						<p>Every home and office deserves the best. Eliminate the stress of looking for trained and qualified domestic staff, find them here on AceDepot!</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100 car-img" src="images/slider/newslider7.jpeg" alt="Seventh slide">
+					<div class="carousel-caption d-none d-md-block">
+						<p>Make every detail of your event colorful and memorable by choosing the right location, staff and services on AceDepot</p>
+					</div>
+				</div>
+			</div>
+			<!-- Left and right controls -->
+			<a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
 	</div>
+
+	
 	<div class="clearfix"></div>
 
 	<section id="scroll-here">

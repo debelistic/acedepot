@@ -1716,7 +1716,7 @@ color: #fff !important;
 padding: 10px 15px;
 }
 nav.navbar.bootsnav {
-background-color:#35434E;
+background-color:#111922;
 border-bottom: 1px solid #35434E;
 }
 @media only screen  and (min-width : 768px) {
@@ -7434,7 +7434,7 @@ section.auth_form_area{
     padding: 90px 0 0;
 }
 .banner{
-height:100vh;
+/* height:100vh; */
 min-height:620px;
 }
 .simple-banner{
@@ -7736,7 +7736,7 @@ nav.navbar .navbar-brand{
 }
 
 nav.navbar .navbar-brand img.logo{
-	width: 140px;
+	/* width: 140px; */
 }
 
 /* Navbar Mobile slide ------*/
@@ -7772,7 +7772,7 @@ margin: 14px 0;
 nav.navbar.bootsnav .navbar-toggle {
 background-color: transparent !important;
 top: 9px;
-color:#9fabb1;
+color:#fda502;
 }
 nav.navbar.bootsnav .dropdown .megamenu-content .col-menu .title{
     border-bottom: solid 1px #abbdca;

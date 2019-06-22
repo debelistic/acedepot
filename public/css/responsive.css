@@ -163,7 +163,7 @@ select.soflow-color {
 }
 .logo{
     float: none;
-    margin-top: 25px;
+    /* margin-top: 25px; */
     height: 70px;
 }
 .menu-sec{
@@ -511,10 +511,16 @@ select, options {
 @media (max-width:767px){
 .carousel-caption p {
     color: #fda502;
-    padding: 0 60px;
-    font-size: 38px;
-    font-weight: 800;
-    line-height: 40px;
+    padding: 20px 10px;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 25px;
+    background: #1119228f;
+    margin: 0 10px;
+    border-radius: 7px;
+}
+.carousel-caption{
+    text-shadow: unset;
 }
 .menu-sec nav > ul {
     float: none; 
@@ -541,7 +547,7 @@ select, options {
 }
 .banner-slider {
     height: calc(100vh - 120px);
-    margin-top: 135px;
+    margin-top: 110px;
 }
 .error-sec > p {
     display: none;

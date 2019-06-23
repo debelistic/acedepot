@@ -70,7 +70,7 @@
           <input type="text" class="form-control" placeholder="Your Name"> 
           <input type="text" class="form-control" placeholder="Email">
           <textarea class="form-control" placeholder="Message"></textarea>
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary">Contact</button>
         </form>
         </div>
         </div>

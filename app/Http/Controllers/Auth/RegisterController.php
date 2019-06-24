@@ -42,21 +42,32 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'role' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
+
     
-    protected function create(Request $data)
+    protected function create(array $data)
     {
         try {
 
-            $this->validate($data, [
-                'first_name' => ['required', 'string', 'max:255'],
-                'last_name' => ['required', 'string', 'max:255'],
-                'role' => [
-                    'required',
-                    Rule::in(['candidate', 'employer', 'contractor'])
-                ],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
-            ]);
+            // $this->validate($data, [
+            //     'first_name' => ['required', 'string', 'max:255'],
+            //     'last_name' => ['required', 'string', 'max:255'],
+            //     'role' => [
+            //         'required',
+            //         Rule::in(['candidate', 'employer', 'contractor'])
+            //     ],
+            //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            //     'password' => ['required', 'string', 'min:8', 'confirmed'],
+            // ]);
 
 
             $user = User::create([
@@ -66,8 +77,9 @@ class RegisterController extends Controller
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]);
-            Auth::login($user);
-            return $this->redirectTo();
+            //Auth::login();
+            //return $this->redirectTo();
+            return $user;
         } catch (\Illuminate\Database\QueryException $th) {
             return redirect('register')->withError($th->getMessage())->withInput();
         }

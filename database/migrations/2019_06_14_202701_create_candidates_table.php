@@ -39,6 +39,7 @@ class CreateCandidatesTable extends Migration
             $table->string('cv_url')->nullable();
             $table->string('fb_url')->nullable();
             $table->string('twt_url')->nullable();
+            $table->string('ig_url')->nullable();
             $table->string('lnkd_url')->nullable();
             $table->string('ext_url')->nullable();
             $table->timestamps();

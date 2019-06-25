@@ -82,7 +82,7 @@ class CandidatesController extends Controller
 
                 $user_img = $data->img_url;
                 $ext = $user_img->getClientOriginalExtension();
-                $pro_img = random_bytes(7).'.'.$ext;
+                $pro_img = $data->middle_name.time().'img.'.$ext;
                 $pro_img_path = $user_img->storeAs('public/pics', $pro_img);
                 //$data->img_url = $pro_img;
             } else{
@@ -94,7 +94,7 @@ class CandidatesController extends Controller
 
                 $user_cv = $data->cv_url;
                 $ext = $user_cv->getClientOriginalExtension();
-                $cand_cv = random_bytes(7).'.'.$ext;
+                $cand_cv = $data->middle_name.time().'cv.'.$ext;
                 $cand_cv_path = $user_cv->storeAs('public/cvs', $cand_cv);
                 //$data->cv_url = $cand_cv;
             } else{

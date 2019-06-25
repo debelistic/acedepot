@@ -31,9 +31,9 @@ class CreateCandidatesTable extends Migration
             $table->string('state', 100);
             $table->string('country');
             $table->enum('status', ['hired', 'hunting', 'vacation'])->default('hunting');
-            $table->integer('num_of_applications')->default(0);
-            $table->integer('num_of_jobs_done')->default(0);
-            $table->json('skills');
+            $table->integer('num_of_applications')->default('0');
+            $table->integer('num_of_jobs_done')->default('0');
+            $table->text('skills');
             $table->longText('about');
             $table->string('img_url', 300)->default('image.png');
             $table->string('cv_url')->nullable();

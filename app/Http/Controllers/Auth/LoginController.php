@@ -72,13 +72,13 @@ class LoginController extends Controller
         $candidate = Candidate::where('candidate_id', $id)->get();
         if ($user->role == 'candidate') {
             if($candidate == null){
-                return redirect('/candidate-dashboard');
+                return route('candidateRegForm');
             }
-            return redirect('/candidate-register');
+            return redirect('candidateDashboard');
         } else if ($user->role == 'employer') {
-            return redirect('/employer-dashboard');
+            return route('home');
         } else if ($user->role == 'contractor') {
-            return redirect('/contractor-dashboard');
+            return route('home');
         }
    }
 }

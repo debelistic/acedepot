@@ -83,8 +83,10 @@ class CandidatesController extends Controller
                 $user_img = $data->img_url;
                 $ext = $user_img->getClientOriginalExtension();
                 $pro_img = random_bytes(7).'.'.$ext;
-                dd($user_img->storeAs('public/pics', $pro_img));
+                $pro_img_path = $user_img->storeAs('public/pics', $pro_img);
                 //$data->img_url = $pro_img;
+            } else{
+                $pro_img_path = 'no_image.jpe';
             }
 
             if($data->hasFile('cv_url')){
@@ -93,13 +95,15 @@ class CandidatesController extends Controller
                 $user_cv = $data->cv_url;
                 $ext = $user_cv->getClientOriginalExtension();
                 $cand_cv = random_bytes(7).'.'.$ext;
-                $user_cv->storeAs('public/cvs', $cand_cv);
-                // $data->cv_url = $cand_cv;
+                $cand_cv_path = $user_cv->storeAs('public/cvs', $cand_cv);
+                //$data->cv_url = $cand_cv;
+            } else{
+                $cand_cv_path = 'no cv uploaded';
             }
             
-            return redirect('/');
+            //return redirect('/');
 
-            /*Candidate::create([
+            Candidate::create([
                 'middle_name' => $data['middle_name'],
                 'what_i_do' => $data['what_i_do'],
                 'candidate_id' => auth()->user()->id,
@@ -120,15 +124,15 @@ class CandidatesController extends Controller
                 'num_of_jobs_done' => $data['num_of_jobs_done'],
                 'skills' => $data['skills'],
                 'about' => $data['about'],
-                'img_url' => $data['img_url'],
-                'cv_url' => $data['cv_url'],
+                'img_url' => $pro_img_path,
+                'cv_url' => $cand_cv_path,
                 'fb_url' => $data['fb_url'],
                 'twt_url' => $data['twt_url'],
                 'ig_url' => $data['ig_url'],
                 'lnkd_url' => $data['lnkd_url'],
                 'ext_url' => $data['ext_web_url'],
             ]);
-            return redirect('/candidate-dashboard')->with('status', 'Your information has been stored');*/
+            return redirect('/candidate-dashboard')->with('status', 'Your information has been stored');
         } catch (Illuminate\Database\QueryException $th) {
             return redirect('/candidate-register')->withError($th->getMessage())->withInput();
 

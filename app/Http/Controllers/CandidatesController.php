@@ -120,8 +120,6 @@ class CandidatesController extends Controller
                 'state' => $data['state'],
                 'country' => $data['country'],
                 'status' => $data['status'],
-                'num_of_applications' => $data['num_of_applications'],
-                'num_of_jobs_done' => $data['num_of_jobs_done'],
                 'skills' => $data['skills'],
                 'about' => $data['about'],
                 'img_url' => $pro_img_path,

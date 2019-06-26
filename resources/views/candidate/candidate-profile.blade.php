@@ -20,7 +20,7 @@
 <div class="ur-detail-wrap create-kit padd-bot-0">
 
 <div class="row">
-  <div class="detail-pic"><img src="assets/img/can-1.png" class="img" alt="" /><a href="#" class="detail-edit" title="edit"><i class="fa fa-pencil"></i></a></div>
+<div class="detail-pic"><img src="{{$candidate[0]->img_url}}" class="img" alt="" /><a href="#" class="detail-edit" title="edit"><i class="fa fa-pencil"></i></a></div>
 <div class="detail-status"><span>{{$candidate[0]->status}}</span></div>
 </div>
 
@@ -40,10 +40,10 @@
   <div class="detail pannel-footer">
     <div class="col-md-5 col-sm-5">
       <ul class="detail-footer-social">
-        <li><a href="{{$candidate[0]->fb_url}}"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="{{$candidate[0]->twt_url}}"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="{{$candidate[0]->lnkd_url}}"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="{{$candidate[0]->ext_url}}"><i class="fa fa-web"></i></a></li>
+        <li><a href="www.facebook.com/{{$candidate[0]->fb_url}}"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="www.twitter.com/{{$candidate[0]->twt_url}}"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="www.linkedin.com/{{$candidate[0]->lnkd_url}}"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="{{$candidate[0]->ext_url}}"><i class="fa fa-globe"></i></a></li>
       </ul>
     </div>
     <div class="col-md-7 col-sm-7">
